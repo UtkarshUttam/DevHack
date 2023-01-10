@@ -1,0 +1,19 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>Color logo - no background.png</file>
+    <file>notification_light_purple.png</file>
+    <file>notification_white.png</file>
+    <file>facebook.png</file>
+    <file>twitter.png</file>
+    <file>github-logo.png</file>
+    <file>notification.png</file>
+    <file>LinkedIn-Symbole.png</file>
+    <file>insta.png</file>
+  </qresource>
+  <qresource prefix="images">
+    <file>White_dot_pattern.png</file>
+    <file>BG_img1.png</file>
+    <file>images.png</file>
+    <file>How-do-hackathons-work.png</file>
+  </qresource>
+</RCC>
