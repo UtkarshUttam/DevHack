@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1178</width>
-    <height>854</height>
+    <width>1920</width>
+    <height>1080</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1500</width>
+    <height>800</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -41,6 +47,12 @@
        </property>
        <item>
         <widget class="QFrame" name="frame_5">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -68,7 +80,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="Log_in_button">
+           <widget class="QPushButton" name="Login_button">
             <property name="font">
              <font>
               <family>Leelawadee UI</family>

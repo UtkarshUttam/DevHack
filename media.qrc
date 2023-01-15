@@ -1,6 +1,8 @@
 <RCC>
   <qresource prefix="icons">
-    <file>Color logo - no background.png</file>
+    <file>media/Color logo black - no background.png</file>
+    <file>media/D-logo.png</file>
+    <file>media/Color logo - no background.png</file>
     <file>notification_light_purple.png</file>
     <file>notification_white.png</file>
     <file>facebook.png</file>
