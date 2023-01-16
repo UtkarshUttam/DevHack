@@ -50,6 +50,24 @@ class HomeWindow(QMainWindow):
     def __init__(self):
         super(HomeWindow, self).__init__()
         uic.loadUi("./Homepage.ui", self)
+
+        self.button401 = self.findChild(QPushButton, "Home_button")
+        self.button401.clicked.connect()
+
+        self.button402 = self.findChild(QPushButton, "Hackathons_button")
+        self.button402.clicked.connect()
+
+        self.button403 = self.findChild(QPushButton, "Organize_button")
+        self.button403.clicked.connect()
+
+        self.button404 = self.findChild(QPushButton, "Internships_button")
+        self.button404.clicked.connect()
+
+        self.button405 = self.findChild(QPushButton, "About_button")
+        self.button405.clicked.connect()
+
+        self.button406 = self.findChild(QPushButton, "Read_more_button")
+        self.button406.clicked.connect()
     
 
 app = QApplication(sys.argv)
