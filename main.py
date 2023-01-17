@@ -2,7 +2,7 @@ import os
 import sys
 from PyQt5 import QtWidgets,uic
 from PyQt5 import QtGui
-from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QPushButton, QFrame, QStackedWidget, QVBoxLayout, QWidget, QFileDialog, QGridLayout
+from PyQt5.QtWidgets import *
 
 
 #button-codes-100
@@ -39,7 +39,16 @@ class LoginWindow(QMainWindow):
         uic.loadUi("./Login.ui", self)
 
         self.button301 = self.findChild(QPushButton, "SignIn_button")
-        self.button301.clicked.connect(self.home_call)
+        self.button301.clicked.connect(self.check_credentials)
+    def check_credentials(self):
+        self.email = self.findChild(QLineEdit, "email_entry").text()
+        self.password = self.findChild(QLineEdit,"password_entry").text()
+        if(self.email == ""):
+            QMessageBox.about(self,"Invalid entry!","Please enter your email .")
+        elif (self.password == ""):
+            QMessageBox.about(self,"Invalid entry!","Please enter your password.")
+        else:
+            self.home_call()
     def home_call(self):
         screen5 = HomeWindow()
         widget.addWidget(screen5)
