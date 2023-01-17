@@ -144,7 +144,7 @@ border-bottom-right-radius:52px;</string>
         </widget>
        </item>
        <item alignment="Qt::AlignLeft">
-        <widget class="QLineEdit" name="lineEdit">
+        <widget class="QLineEdit" name="email_entry">
          <property name="minimumSize">
           <size>
            <width>600</width>
@@ -182,7 +182,7 @@ border-bottom-right-radius:52px;</string>
         </widget>
        </item>
        <item alignment="Qt::AlignLeft|Qt::AlignTop">
-        <widget class="QLineEdit" name="lineEdit_2">
+        <widget class="QLineEdit" name="password_entry">
          <property name="minimumSize">
           <size>
            <width>600</width>
@@ -200,6 +200,9 @@ border-bottom-right-radius:52px;</string>
          </property>
          <property name="inputMask">
           <string comment="   "/>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
          </property>
          <property name="placeholderText">
           <string>    Password</string>
