@@ -92,13 +92,13 @@ class LoginWindow(QMainWindow):
         widget.addWidget(screen2)
         widget.setCurrentIndex(widget.currentIndex()+1)
     def home_call(self):
-        screen5 = HomeWindow()
+        screen5 = HomeWindow(self.email,self.password)
         widget.addWidget(screen5)
         widget.setCurrentIndex(widget.currentIndex()+1)
 
 #button-codes-400
 class HomeWindow(QMainWindow):
-    def __init__(self):
+    def __init__(self,user_email,user_password):
         super(HomeWindow, self).__init__()
         uic.loadUi("./Homepage.ui", self)
 
@@ -119,7 +119,16 @@ class HomeWindow(QMainWindow):
 
         # self.button406 = self.findChild(QPushButton, "Read_more_button")
         # self.button406.clicked.connect()
-    
+
+        mydb = mc.connect(host="localhost", user="root", password="root", database="devhack")
+        mycursor = mydb.cursor()
+        mycursor.execute("SELECT name FROM user_reg_data WHERE email='{0}' and password='{1}'".format(user_email,user_password))
+        self.user_name = (mycursor.fetchone())
+        self.user_name = ''.join(self.user_name)
+       
+        self.hello_username = self.findChild(QLabel, "Hello__User_Name")
+        self.hello_username.setText("Hello "+self.user_name)
+
 #driver-code
 app = QApplication(sys.argv)
 widget = QStackedWidget()
