@@ -74,7 +74,16 @@ class LoginWindow(QMainWindow):
         elif (self.password == ""):
             QMessageBox.about(self,"Invalid entry!","Please enter your password.")
         else:
-            self.home_call()
+            mydb = mc.connect(host="localhost", user="root", password="root", database="devhack")
+            mycursor = mydb.cursor()
+            mycursor.execute("SELECT password FROM user_reg_data WHERE email='%s'" %self.email)
+            self.fetched_password = (mycursor.fetchone())
+            self.fetched_password = ''.join(self.fetched_password)
+            mydb.commit()
+            if(self.fetched_password == self.password):
+                self.home_call()
+            else:
+                QMessageBox.about(self,"Error!","Password and email doesn't match")
     def home_call(self):
         screen5 = HomeWindow()
         widget.addWidget(screen5)
