@@ -66,6 +66,9 @@ class LoginWindow(QMainWindow):
 
         self.button301 = self.findChild(QPushButton, "SignIn_button")
         self.button301.clicked.connect(self.check_credentials)
+
+        self.button302 = self.findChild(QPushButton, "signup_button")
+        self.button302.clicked.connect(self.register_call)
     def check_credentials(self):
         self.email = self.findChild(QLineEdit, "email_entry").text()
         self.password = self.findChild(QLineEdit,"password_entry").text()
@@ -84,6 +87,10 @@ class LoginWindow(QMainWindow):
                 self.home_call()
             else:
                 QMessageBox.about(self,"Error!","Password and email doesn't match")
+    def register_call(self):
+        screen2 = RegisterWindow()
+        widget.addWidget(screen2)
+        widget.setCurrentIndex(widget.currentIndex()+1)
     def home_call(self):
         screen5 = HomeWindow()
         widget.addWidget(screen5)
