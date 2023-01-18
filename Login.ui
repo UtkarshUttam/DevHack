@@ -296,7 +296,7 @@ QPushButton:pressed{
            </widget>
           </item>
           <item alignment="Qt::AlignLeft">
-           <widget class="QPushButton" name="pushButton_2">
+           <widget class="QPushButton" name="signup_button">
             <property name="font">
              <font>
               <family>Leelawadee UI</family>
