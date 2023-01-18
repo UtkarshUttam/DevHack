@@ -3,9 +3,13 @@ import sys
 from PyQt5 import QtWidgets,uic
 from PyQt5 import QtGui
 from PyQt5.QtWidgets import *
+import mysql.connector as mc
+
 
 
 #button-codes-100
+#button100 --> Get started button
+
 class StartingWindow(QMainWindow):
     def __init__(self):
         super(StartingWindow,self).__init__()
@@ -31,6 +35,28 @@ class RegisterWindow(QMainWindow):
     def __init__(self):
         super(RegisterWindow, self).__init__()
         uic.loadUi("./Signup.ui", self)
+
+        self.button201 = self.findChild(QPushButton, "Submit_button")
+        self.button201.clicked.connect(self.reg_action)
+    def reg_action(self):
+        self.name = self.findChild(QLineEdit, "name_entry").text()
+        self.mobile = self.findChild(QLineEdit, "mobile_entry").text()
+        self.email = self.findChild(QLineEdit, "email_entry").text()
+        self.pass1 = self.findChild(QLineEdit, "password_1").text()
+        self.pass2 = self.findChild(QLineEdit, "password_2").text()
+        if (self.pass1 == self.pass2):
+            mydb = mc.connect(host="localhost", user="root", password="root", database="devhack")
+            mycursor = mydb.cursor()
+            query = "INSERT INTO user_reg_data(name,mobile,email,password) values(%s,%s,%s,%s)"
+            value = (self.name,self.mobile,self.email,self.pass1)
+            try:
+                mycursor.execute(query, value)
+                mydb.commit()
+                QMessageBox.about(self,"Sucess!","Data Inserted")
+            except:
+                QMessageBox.about(self,"Sorry!","Data didn't Inserted")
+        else:
+            QMessageBox.about(self,"Error!","Passwords don't match")
     
 #button-codes-300
 class LoginWindow(QMainWindow):
@@ -78,7 +104,7 @@ class HomeWindow(QMainWindow):
         # self.button406 = self.findChild(QPushButton, "Read_more_button")
         # self.button406.clicked.connect()
     
-
+#driver-code
 app = QApplication(sys.argv)
 widget = QStackedWidget()
 mainwindow = StartingWindow()
