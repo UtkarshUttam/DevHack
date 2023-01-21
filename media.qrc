@@ -3,19 +3,26 @@
     <file>media/Color logo black - no background.png</file>
     <file>media/D-logo.png</file>
     <file>media/Color logo - no background.png</file>
-    <file>notification_light_purple.png</file>
-    <file>notification_white.png</file>
-    <file>facebook.png</file>
-    <file>twitter.png</file>
-    <file>github-logo.png</file>
-    <file>notification.png</file>
-    <file>LinkedIn-Symbole.png</file>
-    <file>insta.png</file>
+    <file>media/facebook.png</file>
+    <file>media/github-logo.png</file>
+    <file>media/insta.png</file>
+    <file>media/LinkedIn-Symbole.png</file>
+    <file>media/notification.png</file>
+    <file>media/notification_light_purple.png</file>
+    <file>media/notification_white.png</file>
+    <file>media/twitter.png</file>
   </qresource>
   <qresource prefix="images">
-    <file>White_dot_pattern.png</file>
-    <file>BG_img1.png</file>
-    <file>images.png</file>
-    <file>How-do-hackathons-work.png</file>
+    <file>media/BG_img1.png</file>
+    <file>media/abstract-rectangle-background-free-vector.jpg</file>
+    <file>media/image21.png</file>
+    <file>media/image31.png</file>
+    <file>media/wallpapersden.com_abstract-purple-shape_2560x1300.jpg</file>
+    <file>media/image1.png</file>
+    <file>media/image3.png</file>
+    <file>media/How-do-hackathons-work.png</file>
+    <file>media/image2.png</file>
+    <file>media/White_dot_pattern.png</file>
+    <file>media/image11.png</file>
   </qresource>
 </RCC>
