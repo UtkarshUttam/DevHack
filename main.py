@@ -4,6 +4,7 @@ from PyQt5 import QtWidgets,uic
 from PyQt5 import QtGui
 from PyQt5.QtWidgets import *
 import mysql.connector as mc
+from store import *
 
 
 
@@ -38,6 +39,7 @@ class RegisterWindow(QMainWindow):
 
         self.button201 = self.findChild(QPushButton, "Submit_button")
         self.button201.clicked.connect(self.reg_action)
+    
     def reg_action(self):
         self.name = self.findChild(QLineEdit, "name_entry").text()
         self.mobile = self.findChild(QLineEdit, "mobile_entry").text()
@@ -47,17 +49,32 @@ class RegisterWindow(QMainWindow):
         if (self.pass1 == self.pass2):
             mydb = mc.connect(host="localhost", user="root", password="root", database="devhack")
             mycursor = mydb.cursor()
-            query = "INSERT INTO user_reg_data(name,mobile,email,password) values(%s,%s,%s,%s)"
             value = (self.name,self.mobile,self.email,self.pass1)
-            try:
-                mycursor.execute(query, value)
-                mydb.commit()
-                QMessageBox.about(self,"Sucess!","Data Inserted")
-            except:
-                QMessageBox.about(self,"Sorry!","Data didn't Inserted")
+            query = "INSERT INTO user_reg_data(name,mobile,email,password) values(%s,%s,%s,%s)"
+            # try:
+            if 1==1:
+                if mobilelen(self.mobile) == "True":
+                    if passlen(self.pass1) == "True":
+                        if mobilereg(self.mobile)== "True":
+                            mycursor.execute(query, value)
+                            mydb.commit()
+                            self.homi_call()
+                            QMessageBox.about(self,"Message!","Hellow {0} You have registred successfully".format((self.name).capitalize()))
+                        else:
+                            QMessageBox.about(self,"Error!","Numbre already registred")
+                    else:
+                        QMessageBox.about(self,"Error!","Your password must be more than 8 charecter")
+                else:
+                    QMessageBox.about(self,"Error!","Invalid number")
+            else:
+                pass
         else:
             QMessageBox.about(self,"Error!","Passwords don't match")
-    
+    def homi_call(self):
+        screen5 = HomeWindow(self.email,self.pass1)
+        widget.addWidget(screen5)
+        widget.setCurrentIndex(widget.currentIndex()+1)
+
 #button-codes-300
 class LoginWindow(QMainWindow):
     def __init__(self):
@@ -77,13 +94,7 @@ class LoginWindow(QMainWindow):
         elif (self.password == ""):
             QMessageBox.about(self,"Invalid entry!","Please enter your password.")
         else:
-            mydb = mc.connect(host="localhost", user="root", password="root", database="devhack")
-            mycursor = mydb.cursor()
-            mycursor.execute("SELECT password FROM user_reg_data WHERE email='%s'" %self.email)
-            self.fetched_password = (mycursor.fetchone())
-            self.fetched_password = ''.join(self.fetched_password)
-            mydb.commit()
-            if(self.fetched_password == self.password):
+            if checker(self.email,self.password) == True:
                 self.home_call()
             else:
                 QMessageBox.about(self,"Error!","Password and email doesn't match")
