@@ -138,7 +138,7 @@ class HomeWindow(QMainWindow):
         self.user_name = ''.join(self.user_name)
        
         self.hello_username = self.findChild(QLabel, "Hello__User_Name")
-        self.hello_username.setText("Hello "+self.user_name)
+        self.hello_username.setText("Hello "+(self.user_name).capitalize())
 
 #driver-code
 app = QApplication(sys.argv)
