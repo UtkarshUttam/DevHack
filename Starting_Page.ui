@@ -69,7 +69,7 @@
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">image: url(media/Color logo - no background.png);</string>
+             <string notr="true">image: url(/media/white_logo.png);</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -351,7 +351,7 @@ image:None;</string>
   </widget>
  </widget>
  <resources>
-  <include location="media.qrc"/>
+  <!-- <include location="media.qrc"/> -->
  </resources>
  <connections/>
 </ui>
