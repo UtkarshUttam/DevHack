@@ -114,8 +114,8 @@ class HomeWindow(QMainWindow):
         # self.button403 = self.findChild(QPushButton, "Organize_button")
         # self.button403.clicked.connect()
 
-        # self.button404 = self.findChild(QPushButton, "Internships_button")
-        # self.button404.clicked.connect()
+        self.button404 = self.findChild(QPushButton, "Internships_button")
+        self.button404.clicked.connect(self.internships_call)
 
         # self.button405 = self.findChild(QPushButton, "About_button")
         # self.button405.clicked.connect()
@@ -125,6 +125,9 @@ class HomeWindow(QMainWindow):
 
         self.button407 = self.findChild(QPushButton, "See_All_1")
         self.button407.clicked.connect(self.hackathons_call)
+
+        self.button408 = self.findChild(QPushButton, "See_All_2")
+        self.button408.clicked.connect(self.internships_call)
 
         mydb = mc.connect(host="localhost", user="root", password="root", database="devhack")
         mycursor = mydb.cursor()
@@ -138,6 +141,10 @@ class HomeWindow(QMainWindow):
     def hackathons_call(self):
         screen6 = HackathonsWindow(self.user_name,self.user_email,self.user_password)
         widget.addWidget(screen6)
+        widget.setCurrentIndex(widget.currentIndex()+1)
+    def internships_call(self):
+        screen7 = InternshipsWindow(self.user_name,self.user_email,self.user_password)
+        widget.addWidget(screen7)
         widget.setCurrentIndex(widget.currentIndex()+1)
 
 
@@ -157,8 +164,8 @@ class HackathonsWindow(QMainWindow):
         # self.button503 = self.findChild(QPushButton, "Organize_button")
         # self.button503.clicked.connect()
 
-        # self.button504 = self.findChild(QPushButton, "Internships_button")
-        # self.button504.clicked.connect()
+        self.button504 = self.findChild(QPushButton, "Internships_button")
+        self.button504.clicked.connect(self.internships_call)
 
         # self.button505 = self.findChild(QPushButton, "About_button")
         # self.button505.clicked.connect()
@@ -171,6 +178,49 @@ class HackathonsWindow(QMainWindow):
     def home_call(self):
         screen5 = HomeWindow(self.user_email,self.user_password)
         widget.addWidget(screen5)
+        widget.setCurrentIndex(widget.currentIndex()+1)
+    def internships_call(self):
+        screen7 = InternshipsWindow(self.user_name,self.user_email,self.user_password)
+        widget.addWidget(screen7)
+        widget.setCurrentIndex(widget.currentIndex()+1)
+
+#button-codes-600
+class InternshipsWindow(QMainWindow):
+    def __init__(self,user_name,user_email,user_password):
+        super(InternshipsWindow, self).__init__()
+        uic.loadUi("./Internships.ui", self)
+
+        self.user_email = user_email
+        self.user_name = user_name
+        self.user_password = user_password
+
+        self.button601 = self.findChild(QPushButton, "Home_button")
+        self.button601.clicked.connect(self.home_call)
+
+        self.button602 = self.findChild(QPushButton, "Hackathons_button")
+        self.button602.clicked.connect(self.hackathons_call)
+
+        # self.button603 = self.findChild(QPushButton, "Organize_button")
+        # self.button603.clicked.connect()
+
+        # self.button604 = self.findChild(QPushButton, "Internships_button")
+        # self.button604.clicked.connect()
+
+        # self.button605 = self.findChild(QPushButton, "About_button")
+        # self.button605.clicked.connect()
+
+        # self.button606 = self.findChild(QPushButton, "Read_more_button")
+        # self.button606.clicked.connect()
+
+        self.hello_username = self.findChild(QLabel, "Hello__User_Name")
+        self.hello_username.setText("Hello "+user_name)
+    def home_call(self):
+        screen5 = HomeWindow(self.user_email,self.user_password)
+        widget.addWidget(screen5)
+        widget.setCurrentIndex(widget.currentIndex()+1)
+    def hackathons_call(self):
+        screen6 = HackathonsWindow(self.user_name,self.user_email,self.user_password)
+        widget.addWidget(screen6)
         widget.setCurrentIndex(widget.currentIndex()+1)
 
 #driver-code
