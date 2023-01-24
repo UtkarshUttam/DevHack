@@ -579,11 +579,11 @@ border-radius:40px;</string>
                     <string notr="true">QPushButton{
 color: rgb(255, 255, 255);
 border-radius:50px;
-background-image: url(:/images/media/image1.png);
+background-image: url(/media/image1.png);
 }
 
 QPushButton:hover{
-	background-image: url(:/images/media/image11.png);
+	background-image: url(/media/image11.png);
 }</string>
                    </property>
                    <property name="text">
