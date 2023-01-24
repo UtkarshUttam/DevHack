@@ -105,8 +105,11 @@ class HomeWindow(QMainWindow):
         # self.button401 = self.findChild(QPushButton, "Home_button")
         # self.button401.clicked.connect()
 
-        # self.button402 = self.findChild(QPushButton, "Hackathons_button")
-        # self.button402.clicked.connect()
+        self.user_email = user_email
+        self.user_password = user_password
+
+        self.button402 = self.findChild(QPushButton, "Hackathons_button")
+        self.button402.clicked.connect(self.hackathons_call)
 
         # self.button403 = self.findChild(QPushButton, "Organize_button")
         # self.button403.clicked.connect()
@@ -120,14 +123,55 @@ class HomeWindow(QMainWindow):
         # self.button406 = self.findChild(QPushButton, "Read_more_button")
         # self.button406.clicked.connect()
 
+        self.button407 = self.findChild(QPushButton, "See_All_1")
+        self.button407.clicked.connect(self.hackathons_call)
+
         mydb = mc.connect(host="localhost", user="root", password="root", database="devhack")
         mycursor = mydb.cursor()
-        mycursor.execute("SELECT name FROM user_reg_data WHERE email='{0}' and password='{1}'".format(user_email,user_password))
+        mycursor.execute("SELECT name FROM user_reg_data WHERE email='{0}' and password='{1}'".format(self.user_email,self.user_password))
         self.user_name = (mycursor.fetchone())
         self.user_name = ''.join(self.user_name)
        
         self.hello_username = self.findChild(QLabel, "Hello__User_Name")
         self.hello_username.setText("Hello "+self.user_name)
+
+    def hackathons_call(self):
+        screen6 = HackathonsWindow(self.user_name,self.user_email,self.user_password)
+        widget.addWidget(screen6)
+        widget.setCurrentIndex(widget.currentIndex()+1)
+
+
+#button-codes-500
+class HackathonsWindow(QMainWindow):
+    def __init__(self,user_name,user_email,user_password):
+        super(HackathonsWindow, self).__init__()
+        uic.loadUi("./Hackathons.ui", self)
+
+        self.user_email = user_email
+        self.user_name = user_name
+        self.user_password = user_password
+
+        self.button501 = self.findChild(QPushButton, "Home_button")
+        self.button501.clicked.connect(self.home_call)
+
+        # self.button503 = self.findChild(QPushButton, "Organize_button")
+        # self.button503.clicked.connect()
+
+        # self.button504 = self.findChild(QPushButton, "Internships_button")
+        # self.button504.clicked.connect()
+
+        # self.button505 = self.findChild(QPushButton, "About_button")
+        # self.button505.clicked.connect()
+
+        # self.button506 = self.findChild(QPushButton, "Read_more_button")
+        # self.button506.clicked.connect()
+
+        self.hello_username = self.findChild(QLabel, "Hello__User_Name")
+        self.hello_username.setText("Hello "+user_name)
+    def home_call(self):
+        screen5 = HomeWindow(self.user_email,self.user_password)
+        widget.addWidget(screen5)
+        widget.setCurrentIndex(widget.currentIndex()+1)
 
 #driver-code
 app = QApplication(sys.argv)
