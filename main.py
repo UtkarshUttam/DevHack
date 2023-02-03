@@ -5,8 +5,6 @@ from PyQt5 import QtGui
 from PyQt5.QtWidgets import *
 import mysql.connector as mc
 
-
-
 #button-codes-100
 #button100 --> Get started button
 
@@ -53,10 +51,15 @@ class RegisterWindow(QMainWindow):
                 mycursor.execute(query, value)
                 mydb.commit()
                 QMessageBox.about(self,"Sucess!","Data Inserted")
+                self.login_call()
             except:
                 QMessageBox.about(self,"Sorry!","Data didn't Inserted")
         else:
             QMessageBox.about(self,"Error!","Passwords don't match")
+    def login_call(self):
+        screen4 = LoginWindow()
+        widget.addWidget(screen4)
+        widget.setCurrentIndex(widget.currentIndex()+1)
     
 #button-codes-300
 class LoginWindow(QMainWindow):

@@ -612,12 +612,12 @@ QPushButton:hover{
                    <property name="styleSheet">
                     <string notr="true">QPushButton{
 color: rgb(255, 255, 255);
-background-image: url(:/images/media/image2.png);
+background-image: url(/media/image2.png);
 border-radius:50px;
 }
 
 QPushButton:hover{
-	background-image: url(:/images/media/image21.png);
+	background-image: url(/media/image21.png);
 }</string>
                    </property>
                    <property name="text">
@@ -647,11 +647,11 @@ QPushButton:hover{
                     <string notr="true">QPushButton{
 color: rgb(255, 255, 255);
 border-radius:50px;
-background-image: url(:/images/media/image3.png);
+background-image: url(/media/image3.png);
 }
 
 QPushButton:hover{
-	background-image: url(:/images/media/image31.png);
+	background-image: url(/media/image31.png);
 }</string>
                    </property>
                    <property name="text">
@@ -2078,7 +2078,7 @@ border-radius:50px;</string>
   </widget>
  </widget>
  <resources>
-  <include location="media.qrc"/>
+  <!-- <include location="media.qrc"/> -->
  </resources>
  <connections/>
 </ui>
