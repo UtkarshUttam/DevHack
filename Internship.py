@@ -1,11 +1,17 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import media
 import Homepage
+import hacks
 
 class Ui_InternshipWindow(object):
     def HomeCall(self,email,password):
         self.window = QtWidgets.QMainWindow()
         self.ui = Homepage.Ui_HomeWindow()
+        self.ui.setupUi(self.window,email,password)
+        self.window.show()
+    def HackCall(self,email,password):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = hacks.Ui_HackWindow()
         self.ui.setupUi(self.window,email,password)
         self.window.show()
     def setupUi(self, MainWindow,email,password):
@@ -89,7 +95,8 @@ class Ui_InternshipWindow(object):
 "}")
         self.Home_button.setObjectName("Home_button")
         self.horizontalLayout.addWidget(self.Home_button)
-        self.Hackathons_button = QtWidgets.QPushButton(self.frame)
+        self.Hackathons_button = QtWidgets.QPushButton(self.frame, clicked = lambda: self.HackCall(self.email,self.password))
+        self.Hackathons_button.clicked.connect(MainWindow.close)
         self.Hackathons_button.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
         font.setFamily("Kokila")

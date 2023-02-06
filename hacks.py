@@ -3,12 +3,18 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import mysql.connector as mc
 import sys
 import Homepage
+import Internship
 
 
 class Ui_HackWindow(object):
     def HomeCall(self,email,password):
         self.window = QtWidgets.QMainWindow()
         self.ui = Homepage.Ui_HomeWindow()
+        self.ui.setupUi(self.window,email,password)
+        self.window.show()
+    def InternCall(self,email,password):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Internship.Ui_InternshipWindow()
         self.ui.setupUi(self.window,email,password)
         self.window.show()
     def setupUi(self, Mmainwindow,email,password):
@@ -149,7 +155,8 @@ class Ui_HackWindow(object):
 "}")
         self.Organize_button.setObjectName("Organize_button")
         self.horizontalLayout.addWidget(self.Organize_button)
-        self.Internships_button = QtWidgets.QPushButton(self.frame)
+        self.Internships_button = QtWidgets.QPushButton(self.frame , clicked = lambda: self.InternCall(self.email,self.password))
+        self.Internships_button.clicked.connect(Mmainwindow.close)
         self.Internships_button.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
         font.setFamily("Kokila")
