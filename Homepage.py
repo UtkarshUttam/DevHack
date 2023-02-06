@@ -1,11 +1,18 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from hacks import Ui_HackWindow
+import hacks
+from Internship import Ui_InternshipWindow
 import mysql.connector as mc
+import media
 
 class Ui_HomeWindow(object):
     def HackCall(self,email,password):
         self.window = QtWidgets.QMainWindow()
-        self.ui = Ui_HackWindow()
+        self.ui = hacks.Ui_HackWindow()
+        self.ui.setupUi(self.window,email,password)
+        self.window.show()
+    def InternCall(self,email,password):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_InternshipWindow()
         self.ui.setupUi(self.window,email,password)
         self.window.show()
     def setupUi(self, MainWindow,email,password):
@@ -64,13 +71,13 @@ class Ui_HomeWindow(object):
         mycursor.execute("SELECT name FROM user_reg_data WHERE email='{0}' and password='{1}'".format(self.email,self.password))
         self.user_name = (mycursor.fetchone())
         self.user_name = ''.join(self.user_name)     
-        print(self.user_name)  
+        # print(self.user_name)  
         self.Hello__User_Name.setText("Hello " + self.user_name)
         self.verticalLayout_4.addWidget(self.Hello__User_Name, 0, QtCore.Qt.AlignTop)
         self.horizontalLayout.addWidget(self.frame_3, 0, QtCore.Qt.AlignVCenter)
         spacerItem = QtWidgets.QSpacerItem(107, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
-        self.Home_button = QtWidgets.QPushButton(self.frame)
+        self.Home_button = QtWidgets.QPushButton(self.frame,)
         self.Home_button.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
         font.setFamily("Kokila")
@@ -96,6 +103,7 @@ class Ui_HomeWindow(object):
         self.Home_button.setObjectName("Home_button")
         self.horizontalLayout.addWidget(self.Home_button)
         self.Hackathons_button = QtWidgets.QPushButton(self.frame , clicked = lambda: self.HackCall(self.email,self.password))
+        self.Hackathons_button.clicked.connect(MainWindow.close)
         self.Hackathons_button.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
         font.setFamily("Kokila")
@@ -145,7 +153,8 @@ class Ui_HomeWindow(object):
 "}")
         self.Organize_button.setObjectName("Organize_button")
         self.horizontalLayout.addWidget(self.Organize_button)
-        self.Internships_button = QtWidgets.QPushButton(self.frame)
+        self.Internships_button = QtWidgets.QPushButton(self.frame, clicked = lambda: self.InternCall(self.email,self.password))
+        self.Internships_button.clicked.connect(MainWindow.close)
         self.Internships_button.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
         font.setFamily("Kokila")
@@ -199,15 +208,15 @@ class Ui_HomeWindow(object):
         self.Notifications_button.setMinimumSize(QtCore.QSize(0, 70))
         self.Notifications_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.Notifications_button.setStyleSheet("QPushButton{\n"
-"image: url(:/icons/notification_light_purple.png);\n"
-"}\n"
+"image: url(:/icons/media/notification_light_purple.png);\n"
+"border:None;}\n"
 "\n"
 "QPushButton:hover{\n"
-"image: url(:/icons/notification_white.png);\n"
+"image: url(:/icons/media/notification_white.png);\n"
 "}\n"
 "\n"
 "QPushButton:pressed{\n"
-"    image: url(:/icons/notification.png);\n"
+"    image: url(:/icons/media/notification.png);\n"
 "}")
         self.Notifications_button.setText("")
         self.Notifications_button.setShortcut("")
@@ -298,11 +307,11 @@ class Ui_HomeWindow(object):
         self.pushButton.setStyleSheet("QPushButton{\n"
 "color: rgb(255, 255, 255);\n"
 "border-radius:50px;\n"
-"background-image: url(/media/image1.png);\n"
+"background-image: url(:/images/media/image1.png);\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
-"    background-image: url(/media/image11.png);\n"
+"    background-image: url(:/images/media/image11.png);\n"
 "}")
         self.pushButton.setObjectName("pushButton")
         self.horizontalLayout_16.addWidget(self.pushButton)
@@ -316,12 +325,12 @@ class Ui_HomeWindow(object):
         self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_2.setStyleSheet("QPushButton{\n"
 "color: rgb(255, 255, 255);\n"
-"background-image: url(/media/image2.png);\n"
+"background-image: url(:/images/media/image2.png);\n"
 "border-radius:50px;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
-"    background-image: url(/media/image21.png);\n"
+"    background-image: url(:/images/media/image21.png);\n"
 "}")
         self.pushButton_2.setObjectName("pushButton_2")
         self.horizontalLayout_16.addWidget(self.pushButton_2)
@@ -336,11 +345,11 @@ class Ui_HomeWindow(object):
         self.pushButton_3.setStyleSheet("QPushButton{\n"
 "color: rgb(255, 255, 255);\n"
 "border-radius:50px;\n"
-"background-image: url(/media/image3.png);\n"
+"background-image: url(:/images/media/image3.png);\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
-"    background-image: url(/media/image31.png);\n"
+"    background-image: url(:/images/media/image31.png);\n"
 "}")
         self.pushButton_3.setObjectName("pushButton_3")
         self.horizontalLayout_16.addWidget(self.pushButton_3)
@@ -639,7 +648,7 @@ class Ui_HomeWindow(object):
         self.Linked_In_U.setMinimumSize(QtCore.QSize(60, 60))
         self.Linked_In_U.setMaximumSize(QtCore.QSize(60, 16777215))
         self.Linked_In_U.setStyleSheet("\n"
-"image: url(:/icons/LinkedIn-Symbole.png);\n"
+"image: url(:/icons/media/LinkedIn-Symbole.png);\n"
 "border-radius:30px;")
         self.Linked_In_U.setText("")
         self.Linked_In_U.setObjectName("Linked_In_U")
@@ -647,7 +656,7 @@ class Ui_HomeWindow(object):
         self.Insta_U = QtWidgets.QPushButton(self.frame_25)
         self.Insta_U.setMinimumSize(QtCore.QSize(60, 60))
         self.Insta_U.setMaximumSize(QtCore.QSize(60, 16777215))
-        self.Insta_U.setStyleSheet("image: url(:/icons/insta.png);\n"
+        self.Insta_U.setStyleSheet("image: url(:/icons/media/insta.png);\n"
 "border-radius:30px;")
         self.Insta_U.setText("")
         self.Insta_U.setObjectName("Insta_U")
@@ -655,7 +664,7 @@ class Ui_HomeWindow(object):
         self.GitHub_U = QtWidgets.QPushButton(self.frame_25)
         self.GitHub_U.setMinimumSize(QtCore.QSize(60, 60))
         self.GitHub_U.setMaximumSize(QtCore.QSize(60, 16777215))
-        self.GitHub_U.setStyleSheet("image: url(:/icons/github-logo.png);\n"
+        self.GitHub_U.setStyleSheet("image: url(:/icons/media/github-logo.png);\n"
 "border-radius:30px;")
         self.GitHub_U.setText("")
         self.GitHub_U.setObjectName("GitHub_U")
@@ -699,7 +708,7 @@ class Ui_HomeWindow(object):
         self.Linked_In_O.setMinimumSize(QtCore.QSize(60, 60))
         self.Linked_In_O.setMaximumSize(QtCore.QSize(60, 16777215))
         self.Linked_In_O.setStyleSheet("\n"
-"image: url(:/icons/LinkedIn-Symbole.png);\n"
+"image: url(:/icons/media/LinkedIn-Symbole.png);\n"
 "border-radius:30px;")
         self.Linked_In_O.setText("")
         self.Linked_In_O.setObjectName("Linked_In_O")
@@ -707,7 +716,7 @@ class Ui_HomeWindow(object):
         self.Insta_O = QtWidgets.QPushButton(self.frame_27)
         self.Insta_O.setMinimumSize(QtCore.QSize(60, 60))
         self.Insta_O.setMaximumSize(QtCore.QSize(60, 16777215))
-        self.Insta_O.setStyleSheet("image: url(:/icons/insta.png);\n"
+        self.Insta_O.setStyleSheet("image: url(:/icons/media/insta.png);\n"
 "border-radius:30px;")
         self.Insta_O.setText("")
         self.Insta_O.setObjectName("Insta_O")
@@ -715,7 +724,7 @@ class Ui_HomeWindow(object):
         self.GitHub_O = QtWidgets.QPushButton(self.frame_27)
         self.GitHub_O.setMinimumSize(QtCore.QSize(60, 60))
         self.GitHub_O.setMaximumSize(QtCore.QSize(60, 16777215))
-        self.GitHub_O.setStyleSheet("image: url(:/icons/github-logo.png);\n"
+        self.GitHub_O.setStyleSheet("image: url(:/icons/media/github-logo.png);\n"
 "border-radius:30px;")
         self.GitHub_O.setText("")
         self.GitHub_O.setObjectName("GitHub_O")
@@ -759,7 +768,7 @@ class Ui_HomeWindow(object):
         self.Linked_In_AM.setMinimumSize(QtCore.QSize(60, 60))
         self.Linked_In_AM.setMaximumSize(QtCore.QSize(60, 16777215))
         self.Linked_In_AM.setStyleSheet("\n"
-"image: url(:/icons/LinkedIn-Symbole.png);\n"
+"image: url(:/icons/media/LinkedIn-Symbole.png);\n"
 "border-radius:30px;")
         self.Linked_In_AM.setText("")
         self.Linked_In_AM.setObjectName("Linked_In_AM")
@@ -767,7 +776,7 @@ class Ui_HomeWindow(object):
         self.Insta_AM = QtWidgets.QPushButton(self.frame_31)
         self.Insta_AM.setMinimumSize(QtCore.QSize(60, 60))
         self.Insta_AM.setMaximumSize(QtCore.QSize(60, 16777215))
-        self.Insta_AM.setStyleSheet("image: url(:/icons/insta.png);\n"
+        self.Insta_AM.setStyleSheet("image: url(:/icons/media/insta.png);\n"
 "border-radius:30px;")
         self.Insta_AM.setText("")
         self.Insta_AM.setObjectName("Insta_AM")
@@ -775,7 +784,7 @@ class Ui_HomeWindow(object):
         self.GitHub_AM = QtWidgets.QPushButton(self.frame_31)
         self.GitHub_AM.setMinimumSize(QtCore.QSize(60, 60))
         self.GitHub_AM.setMaximumSize(QtCore.QSize(60, 16777215))
-        self.GitHub_AM.setStyleSheet("image: url(:/icons/github-logo.png);\n"
+        self.GitHub_AM.setStyleSheet("image: url(:/icons/media/github-logo.png);\n"
 "border-radius:30px;")
         self.GitHub_AM.setText("")
         self.GitHub_AM.setObjectName("GitHub_AM")
@@ -819,7 +828,7 @@ class Ui_HomeWindow(object):
         self.Linked_IN_AB.setMinimumSize(QtCore.QSize(60, 60))
         self.Linked_IN_AB.setMaximumSize(QtCore.QSize(60, 16777215))
         self.Linked_IN_AB.setStyleSheet("\n"
-"image: url(:/icons/LinkedIn-Symbole.png);\n"
+"image: url(:/icons/media/LinkedIn-Symbole.png);\n"
 "border-radius:30px;")
         self.Linked_IN_AB.setText("")
         self.Linked_IN_AB.setObjectName("Linked_IN_AB")
@@ -827,7 +836,7 @@ class Ui_HomeWindow(object):
         self.Insta_AB = QtWidgets.QPushButton(self.frame_29)
         self.Insta_AB.setMinimumSize(QtCore.QSize(60, 60))
         self.Insta_AB.setMaximumSize(QtCore.QSize(60, 16777215))
-        self.Insta_AB.setStyleSheet("image: url(:/icons/insta.png);\n"
+        self.Insta_AB.setStyleSheet("image: url(:/icons/media/insta.png);\n"
 "border-radius:30px;")
         self.Insta_AB.setText("")
         self.Insta_AB.setObjectName("Insta_AB")
@@ -835,7 +844,7 @@ class Ui_HomeWindow(object):
         self.GitHub_AB = QtWidgets.QPushButton(self.frame_29)
         self.GitHub_AB.setMinimumSize(QtCore.QSize(60, 60))
         self.GitHub_AB.setMaximumSize(QtCore.QSize(60, 16777215))
-        self.GitHub_AB.setStyleSheet("image: url(:/icons/github-logo.png);\n"
+        self.GitHub_AB.setStyleSheet("image: url(:/icons/media/github-logo.png);\n"
 "border-radius:30px;")
         self.GitHub_AB.setText("")
         self.GitHub_AB.setObjectName("GitHub_AB")
@@ -943,7 +952,7 @@ class Ui_HomeWindow(object):
         self.FB_Devhack = QtWidgets.QPushButton(self.frame_34)
         self.FB_Devhack.setMinimumSize(QtCore.QSize(0, 100))
         self.FB_Devhack.setMaximumSize(QtCore.QSize(100, 16777215))
-        self.FB_Devhack.setStyleSheet("image: url(:/icons/facebook.png);\n"
+        self.FB_Devhack.setStyleSheet("image: url(:/icons/media/facebook.png);\n"
 "border-radius:50px;")
         self.FB_Devhack.setText("")
         self.FB_Devhack.setObjectName("FB_Devhack")
@@ -951,7 +960,7 @@ class Ui_HomeWindow(object):
         self.Twitter_Devhack = QtWidgets.QPushButton(self.frame_34)
         self.Twitter_Devhack.setMinimumSize(QtCore.QSize(0, 100))
         self.Twitter_Devhack.setMaximumSize(QtCore.QSize(100, 16777215))
-        self.Twitter_Devhack.setStyleSheet("image: url(:/icons/twitter.png);\n"
+        self.Twitter_Devhack.setStyleSheet("image: url(:/icons/media/twitter.png);\n"
 "border-radius:50px;")
         self.Twitter_Devhack.setText("")
         self.Twitter_Devhack.setObjectName("Twitter_Devhack")
@@ -959,7 +968,7 @@ class Ui_HomeWindow(object):
         self.Insta_Devhack = QtWidgets.QPushButton(self.frame_34)
         self.Insta_Devhack.setMinimumSize(QtCore.QSize(0, 100))
         self.Insta_Devhack.setMaximumSize(QtCore.QSize(100, 16777215))
-        self.Insta_Devhack.setStyleSheet("image: url(:/icons/insta.png);\n"
+        self.Insta_Devhack.setStyleSheet("image: url(:/icons/media/insta.png);\n"
 "border-radius:50px;")
         self.Insta_Devhack.setText("")
         self.Insta_Devhack.setObjectName("Insta_Devhack")

@@ -1,6 +1,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Login import Ui_LoginWindow
 from Signup import Ui_SignupWindow
+import media
+
 
 
 class Ui_StartWindow(object):
@@ -9,6 +11,7 @@ class Ui_StartWindow(object):
         self.ui = Ui_LoginWindow()
         self.ui.setupUi(self.window)
         self.window.show()
+
     def Regcall(self):
         self.window = QtWidgets.QMainWindow()
         self.ui = Ui_SignupWindow()
@@ -42,12 +45,13 @@ class Ui_StartWindow(object):
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.frame_7 = QtWidgets.QFrame(self.frame_5)
         self.frame_7.setMinimumSize(QtCore.QSize(200, 0))
-        self.frame_7.setStyleSheet("image: url(/media/white_logo.png);")
+        self.frame_7.setStyleSheet("image: url(:/icons/media/white_logo.png);")
         self.frame_7.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_7.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_7.setObjectName("frame_7")
         self.horizontalLayout_3.addWidget(self.frame_7, 0, QtCore.Qt.AlignLeft)
         self.Login_button = QtWidgets.QPushButton(self.frame_5, clicked = lambda: self.Logincall())
+        self.Login_button.clicked.connect(MainWindow.close)
         font = QtGui.QFont()
         font.setFamily("Leelawadee UI")
         font.setPointSize(18)
@@ -103,6 +107,7 @@ class Ui_StartWindow(object):
         self.verticalLayout_2.addWidget(self.label_2)
         self.Get_Started_button = QtWidgets.QPushButton(self.frame_3, clicked = lambda: self.Regcall())
         self.Get_Started_button.setMinimumSize(QtCore.QSize(0, 100))
+        self.Get_Started_button.clicked.connect(MainWindow.close)
         self.Get_Started_button.setMaximumSize(QtCore.QSize(400, 16777215))
         font = QtGui.QFont()
         font.setFamily("Leelawadee UI")

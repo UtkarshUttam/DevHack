@@ -1,11 +1,19 @@
-
-
+import media
 from PyQt5 import QtCore, QtGui, QtWidgets
 import mysql.connector as mc
 import sys
+import Homepage
+
 
 class Ui_HackWindow(object):
+    def HomeCall(self,email,password):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Homepage.Ui_HomeWindow()
+        self.ui.setupUi(self.window,email,password)
+        self.window.show()
     def setupUi(self, Mmainwindow,email,password):
+        self.email = email
+        self.password = password
         Mmainwindow.setObjectName("Mmainwindow")
         Mmainwindow.resize(1250, 1070)
         Mmainwindow.setStyleSheet("background-color: rgb(229, 184, 244);")
@@ -54,11 +62,19 @@ class Ui_HackWindow(object):
         self.Hello__User_Name.setFont(font)
         self.Hello__User_Name.setStyleSheet("color: rgb(129, 12, 168);")
         self.Hello__User_Name.setObjectName("Hello__User_Name")
+        mydb = mc.connect(host="localhost", user="root", password="root", database="devhack")
+        mycursor = mydb.cursor()
+        mycursor.execute("SELECT name FROM user_reg_data WHERE email='{0}' and password='{1}'".format(self.email,self.password))
+        self.user_name = (mycursor.fetchone())
+        self.user_name = ''.join(self.user_name)     
+        # print(self.user_name)  
+        self.Hello__User_Name.setText("Hello " + self.user_name)
         self.verticalLayout_4.addWidget(self.Hello__User_Name, 0, QtCore.Qt.AlignTop)
         self.horizontalLayout.addWidget(self.frame_3)
         spacerItem = QtWidgets.QSpacerItem(107, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
-        self.Home_button = QtWidgets.QPushButton(self.frame)
+        self.Home_button = QtWidgets.QPushButton(self.frame, clicked = lambda: self.HomeCall(self.email,self.password))
+        self.Home_button.clicked.connect(Mmainwindow.close)
         self.Home_button.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
         font.setFamily("Kokila")
@@ -512,7 +528,7 @@ class Ui_HackWindow(object):
         Mmainwindow.setWindowTitle(_translate("Mmainwindow", "Mmainwindow"))
         self.User_Icon.setText(_translate("Mmainwindow", "PushButton"))
         self.DEVHACK.setText(_translate("Mmainwindow", "DEVHACK"))
-        self.Hello__User_Name.setText(_translate("Mmainwindow", "HELLO AMBRISH"))
+        # self.Hello__User_Name.setText(_translate("Mmainwindow", "HELLO AMBRISH"))
         self.Home_button.setText(_translate("Mmainwindow", "HOME"))
         self.Hackathons_button.setText(_translate("Mmainwindow", "  HACKATHONS  "))
         self.Organize_button.setText(_translate("Mmainwindow", "  ORGANIZE  "))

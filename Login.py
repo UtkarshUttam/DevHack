@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import *
 import mysql.connector as mc
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Homepage import Ui_HomeWindow
+import media
 
 
 class Ui_LoginWindow(object):
@@ -51,7 +52,7 @@ class Ui_LoginWindow(object):
         self.verticalLayout.setObjectName("verticalLayout")
         self.label = QtWidgets.QLabel(self.frame)
         self.label.setMinimumSize(QtCore.QSize(350, 0))
-        self.label.setStyleSheet("image: url(:/icons/media/Color logo - no background.png);")
+        self.label.setStyleSheet("image: url(:/icons/media/white_logo.png);")
         self.label.setText("")
         self.label.setObjectName("label")
         self.verticalLayout.addWidget(self.label, 0, QtCore.Qt.AlignLeft)
@@ -133,6 +134,7 @@ class Ui_LoginWindow(object):
         self.checkBox.setObjectName("checkBox")
         self.verticalLayout_2.addWidget(self.checkBox, 0, QtCore.Qt.AlignTop)
         self.SignIn_button = QtWidgets.QPushButton(self.frame_2, clicked = lambda: self.check_credentials(self.email_entry.text(),self.password_entry.text()))
+        self.SignIn_button.clicked.connect(MainWindow.close)
         self.SignIn_button.setMinimumSize(QtCore.QSize(488, 52))
         font = QtGui.QFont()
         font.setFamily("Leelawadee UI")

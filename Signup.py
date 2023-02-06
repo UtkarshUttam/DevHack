@@ -1,13 +1,42 @@
-
 from PyQt5 import QtCore, QtGui, QtWidgets
+from Login import Ui_LoginWindow
+from PyQt5.QtWidgets import *
+import mysql.connector as mc
+import sys
+import media
 
-
-class Ui_SignupWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1920, 1080)
-        MainWindow.setMinimumSize(QtCore.QSize(1500, 800))
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
+class Ui_SignupWindow(QMainWindow):
+    def Logincall(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_LoginWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
+    def reg_action(self,name,mobile,email,pass1,pass2):
+        self.name = name
+        self.mobile = mobile
+        self.email = email
+        self.pass1 = pass1
+        self.pass2 = pass2
+        if (self.pass1 == self.pass2):
+            mydb = mc.connect(host="localhost", user="root", password="root", database="devhack")
+            mycursor = mydb.cursor()
+            query = "INSERT INTO user_reg_data(name,mobile,email,password) values(%s,%s,%s,%s)"
+            value = (self.name,self.mobile,self.email,self.pass1)
+            try:
+                mycursor.execute(query, value)
+                mydb.commit()
+                QMessageBox.about(self,"Sucess!","Data Inserted")
+                self.Logincall()
+            except:
+                QMessageBox.about(self,"Sorry!","Data didn't Inserted")
+        else:
+            QMessageBox.about(self,"Error!","Passwords don't match")
+    def setupUi(self, SignupWindow):
+        SignupWindow.setObjectName("SignupWindow")
+        SignupWindow.resize(1920, 1080)
+        SignupWindow.setMinimumSize(QtCore.QSize(1500, 800))
+        SignupWindow.setStyleSheet("background-color: rgb(180, 100, 206);")
+        self.centralwidget = QtWidgets.QWidget(SignupWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setObjectName("horizontalLayout")
@@ -83,6 +112,10 @@ class Ui_SignupWindow(object):
         self.horizontalLayout_2.addWidget(self.label_6, 0, QtCore.Qt.AlignLeft)
         self.verticalLayout_2.addWidget(self.frame_6)
         self.label = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Leelawadee UI")
+        font.setPointSize(20)
+        self.label.setFont(font)
         self.label.setStyleSheet("color: rgb(77, 89, 89);")
         self.label.setObjectName("label")
         self.verticalLayout_2.addWidget(self.label)
@@ -93,12 +126,26 @@ class Ui_SignupWindow(object):
         sizePolicy.setHeightForWidth(self.name_entry.sizePolicy().hasHeightForWidth())
         self.name_entry.setSizePolicy(sizePolicy)
         self.name_entry.setMinimumSize(QtCore.QSize(0, 50))
-        self.name_entry.setStyleSheet("background-color: rgb(239, 240, 242);")
+        font = QtGui.QFont()
+        font.setFamily("Leelawadee UI")
+        font.setPointSize(20)
+        self.name_entry.setFont(font)
+        self.name_entry.setStyleSheet("QLineEdit{\n"
+"    background-color: rgb(182, 183, 184);\n"
+"}\n"
+"\n"
+"QLineEdit:Focus{\n"
+"background-color: rgb(239, 240, 242);\n"
+"}")
         self.name_entry.setInputMask("")
         self.name_entry.setFrame(False)
         self.name_entry.setObjectName("name_entry")
         self.verticalLayout_2.addWidget(self.name_entry)
         self.label_2 = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Leelawadee UI")
+        font.setPointSize(20)
+        self.label_2.setFont(font)
         self.label_2.setStyleSheet("color: rgb(77, 89, 89);")
         self.label_2.setObjectName("label_2")
         self.verticalLayout_2.addWidget(self.label_2)
@@ -109,11 +156,25 @@ class Ui_SignupWindow(object):
         sizePolicy.setHeightForWidth(self.email_entry.sizePolicy().hasHeightForWidth())
         self.email_entry.setSizePolicy(sizePolicy)
         self.email_entry.setMinimumSize(QtCore.QSize(0, 50))
-        self.email_entry.setStyleSheet("background-color: rgb(239, 240, 242);")
+        font = QtGui.QFont()
+        font.setFamily("Leelawadee UI")
+        font.setPointSize(20)
+        self.email_entry.setFont(font)
+        self.email_entry.setStyleSheet("QLineEdit{\n"
+"    background-color: rgb(182, 183, 184);\n"
+"}\n"
+"\n"
+"QLineEdit:Focus{\n"
+"background-color: rgb(239, 240, 242);\n"
+"}")
         self.email_entry.setFrame(False)
         self.email_entry.setObjectName("email_entry")
         self.verticalLayout_2.addWidget(self.email_entry)
         self.label_8 = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Leelawadee UI")
+        font.setPointSize(20)
+        self.label_8.setFont(font)
         self.label_8.setStyleSheet("color: rgb(77, 89, 89);")
         self.label_8.setObjectName("label_8")
         self.verticalLayout_2.addWidget(self.label_8)
@@ -124,12 +185,26 @@ class Ui_SignupWindow(object):
         sizePolicy.setHeightForWidth(self.mobile_entry.sizePolicy().hasHeightForWidth())
         self.mobile_entry.setSizePolicy(sizePolicy)
         self.mobile_entry.setMinimumSize(QtCore.QSize(0, 50))
-        self.mobile_entry.setStyleSheet("background-color: rgb(239, 240, 242);")
+        font = QtGui.QFont()
+        font.setFamily("Leelawadee UI")
+        font.setPointSize(20)
+        self.mobile_entry.setFont(font)
+        self.mobile_entry.setStyleSheet("QLineEdit{\n"
+"    background-color: rgb(182, 183, 184);\n"
+"}\n"
+"\n"
+"QLineEdit:Focus{\n"
+"background-color: rgb(239, 240, 242);\n"
+"}")
         self.mobile_entry.setInputMask("")
         self.mobile_entry.setFrame(False)
         self.mobile_entry.setObjectName("mobile_entry")
         self.verticalLayout_2.addWidget(self.mobile_entry)
         self.label_3 = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Leelawadee UI")
+        font.setPointSize(20)
+        self.label_3.setFont(font)
         self.label_3.setStyleSheet("color: rgb(77, 89, 89);")
         self.label_3.setObjectName("label_3")
         self.verticalLayout_2.addWidget(self.label_3)
@@ -140,12 +215,26 @@ class Ui_SignupWindow(object):
         sizePolicy.setHeightForWidth(self.password_1.sizePolicy().hasHeightForWidth())
         self.password_1.setSizePolicy(sizePolicy)
         self.password_1.setMinimumSize(QtCore.QSize(0, 50))
-        self.password_1.setStyleSheet("background-color: rgb(239, 240, 242);")
+        font = QtGui.QFont()
+        font.setFamily("Leelawadee UI")
+        font.setPointSize(20)
+        self.password_1.setFont(font)
+        self.password_1.setStyleSheet("QLineEdit{\n"
+"    background-color: rgb(182, 183, 184);\n"
+"}\n"
+"\n"
+"QLineEdit:Focus{\n"
+"background-color: rgb(239, 240, 242);\n"
+"}")
         self.password_1.setFrame(False)
         self.password_1.setEchoMode(QtWidgets.QLineEdit.Password)
         self.password_1.setObjectName("password_1")
         self.verticalLayout_2.addWidget(self.password_1)
         self.label_4 = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Leelawadee UI")
+        font.setPointSize(20)
+        self.label_4.setFont(font)
         self.label_4.setStyleSheet("color: rgb(77, 89, 89);")
         self.label_4.setObjectName("label_4")
         self.verticalLayout_2.addWidget(self.label_4)
@@ -156,7 +245,17 @@ class Ui_SignupWindow(object):
         sizePolicy.setHeightForWidth(self.password_2.sizePolicy().hasHeightForWidth())
         self.password_2.setSizePolicy(sizePolicy)
         self.password_2.setMinimumSize(QtCore.QSize(0, 50))
-        self.password_2.setStyleSheet("background-color: rgb(239, 240, 242);")
+        font = QtGui.QFont()
+        font.setFamily("Leelawadee UI")
+        font.setPointSize(20)
+        self.password_2.setFont(font)
+        self.password_2.setStyleSheet("QLineEdit{\n"
+"    background-color: rgb(182, 183, 184);\n"
+"}\n"
+"\n"
+"QLineEdit:Focus{\n"
+"background-color: rgb(239, 240, 242);\n"
+"}")
         self.password_2.setFrame(False)
         self.password_2.setObjectName("password_2")
         self.verticalLayout_2.addWidget(self.password_2)
@@ -168,7 +267,7 @@ class Ui_SignupWindow(object):
         self.frame_5.setObjectName("frame_5")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.frame_5)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.Submit_button = QtWidgets.QPushButton(self.frame_5)
+        self.Submit_button = QtWidgets.QPushButton(self.frame_5, clicked = lambda: self.reg_action(self.name_entry.text(),self.mobile_entry.text(),self.email_entry.text(),self.password_1.text(),self.password_2.text()))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -177,50 +276,96 @@ class Ui_SignupWindow(object):
         self.Submit_button.setMinimumSize(QtCore.QSize(200, 50))
         font = QtGui.QFont()
         font.setFamily("Leelawadee UI")
-        font.setPointSize(14)
+        font.setPointSize(26)
         self.Submit_button.setFont(font)
         self.Submit_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.Submit_button.setStyleSheet("background-color: rgb(0, 112, 116);\n"
-"color: rgb(255, 255, 255);")
+        self.Submit_button.setStyleSheet("QPushButton{\n"
+"background-color: rgb(0, 112, 116);\n"
+"color: rgb(255, 255, 255);\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color: rgb(255, 255, 255);\n"
+"    color: rgb(0, 112, 116);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color: rgb(0, 59, 61);\n"
+"    color: rgb(255, 255, 255);\n"
+"}")
         self.Submit_button.setObjectName("Submit_button")
         self.verticalLayout_3.addWidget(self.Submit_button, 0, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignVCenter)
         self.frame_7 = QtWidgets.QFrame(self.frame_5)
+        self.frame_7.setMinimumSize(QtCore.QSize(0, 100))
         self.frame_7.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_7.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_7.setObjectName("frame_7")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_7)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.label_9 = QtWidgets.QLabel(self.frame_7)
+        font = QtGui.QFont()
+        font.setFamily("Leelawadee UI")
+        font.setPointSize(18)
+        self.label_9.setFont(font)
+        self.label_9.setStyleSheet("color: rgb(77, 89, 89);")
+        self.label_9.setObjectName("label_9")
+        self.horizontalLayout_3.addWidget(self.label_9, 0, QtCore.Qt.AlignRight)
+        self.Log_in_pushbutton = QtWidgets.QPushButton(self.frame_7, clicked = lambda: self.Logincall())
+        font = QtGui.QFont()
+        font.setFamily("Leelawadee UI")
+        font.setPointSize(18)
+        font.setBold(True)
+        self.Log_in_pushbutton.setFont(font)
+        self.Log_in_pushbutton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Log_in_pushbutton.setStyleSheet("QPushButton{\n"
+"color: rgb(0, 112, 116);\n"
+"border:None;\n"
+"}\n"
+"QPushButton:hover{\n"
+"    color: rgb(255, 0, 0);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"color:rgb(226, 151, 0)\n"
+"}")
+        self.Log_in_pushbutton.setFlat(True)
+        self.Log_in_pushbutton.setObjectName("Log_in_pushbutton")
+        self.horizontalLayout_3.addWidget(self.Log_in_pushbutton, 0, QtCore.Qt.AlignLeft)
         self.verticalLayout_3.addWidget(self.frame_7, 0, QtCore.Qt.AlignVCenter)
         self.verticalLayout.addWidget(self.frame_5)
         self.horizontalLayout.addWidget(self.frame_2)
-        MainWindow.setCentralWidget(self.centralwidget)
+        SignupWindow.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.retranslateUi(SignupWindow)
+        QtCore.QMetaObject.connectSlotsByName(SignupWindow)
 
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, SignupWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label_7.setText(_translate("MainWindow", "The Home for Hackathons \n"
+        SignupWindow.setWindowTitle(_translate("SignupWindow", "MainWindow"))
+        self.label_7.setText(_translate("SignupWindow", "The Home for Hackathons \n"
 "Internships & Many More"))
-        self.label_5.setText(_translate("MainWindow", "<html><head/><body><p align=\"right\">Welcome to</p></body></html>"))
-        self.label.setText(_translate("MainWindow", "Full Name"))
-        self.name_entry.setPlaceholderText(_translate("MainWindow", "    Enter your name"))
-        self.label_2.setText(_translate("MainWindow", "Email"))
-        self.email_entry.setPlaceholderText(_translate("MainWindow", "   Enter your Email here"))
-        self.label_8.setText(_translate("MainWindow", "Mobile No."))
-        self.mobile_entry.setPlaceholderText(_translate("MainWindow", "    Enter your mobile number"))
-        self.label_3.setText(_translate("MainWindow", "Password"))
-        self.password_1.setPlaceholderText(_translate("MainWindow", "   Enter your Password"))
-        self.label_4.setText(_translate("MainWindow", "Confirm Password"))
-        self.password_2.setPlaceholderText(_translate("MainWindow", "   Re-enter Password"))
-        self.Submit_button.setText(_translate("MainWindow", "Create Account"))
+        self.label_5.setText(_translate("SignupWindow", "<html><head/><body><p align=\"right\">Welcome to</p></body></html>"))
+        self.label.setText(_translate("SignupWindow", "Full Name"))
+        self.name_entry.setPlaceholderText(_translate("SignupWindow", "    Enter your name"))
+        self.label_2.setText(_translate("SignupWindow", "Email"))
+        self.email_entry.setPlaceholderText(_translate("SignupWindow", "   Enter your Email here"))
+        self.label_8.setText(_translate("SignupWindow", "Mobile No."))
+        self.mobile_entry.setPlaceholderText(_translate("SignupWindow", "    Enter your mobile number"))
+        self.label_3.setText(_translate("SignupWindow", "Password"))
+        self.password_1.setPlaceholderText(_translate("SignupWindow", "   Enter your Password"))
+        self.label_4.setText(_translate("SignupWindow", "Confirm Password"))
+        self.password_2.setPlaceholderText(_translate("SignupWindow", "   Re-enter Password"))
+        self.Submit_button.setText(_translate("SignupWindow", "    Create Account    "))
+        self.label_9.setText(_translate("SignupWindow", "Already have an account?"))
+        self.Log_in_pushbutton.setText(_translate("SignupWindow", "Log in"))
 # import media_rc
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
+    SignupWindow = QtWidgets.QMainWindow()
     ui = Ui_SignupWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
+    ui.setupUi(SignupWindow)
+    SignupWindow.show()
     sys.exit(app.exec_())
