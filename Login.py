@@ -6,6 +6,7 @@ import mysql.connector as mc
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Homepage import Ui_HomeWindow
 import media
+from xl_sql import scrap_inserter
 
 
 class Ui_LoginWindow(object):
@@ -22,12 +23,13 @@ class Ui_LoginWindow(object):
         elif (self.password == ""):
             QMessageBox.about(self,"Invalid entry!","Please enter your password.")
         else:
+            scrap_inserter()
             mydb = mc.connect(host="localhost", user="root", password="root", database="devhack")
             mycursor = mydb.cursor()
-            mycursor.execute("SELECT password FROM user_reg_data WHERE email='%s'" %self.email)
-            self.fetched_password = (mycursor.fetchone())
+            mycursor.execute("SELECT password FROM user_reg_data WHERE email='%s'"%self.email)
+            self.fetched_password = mycursor.fetchone()
             self.fetched_password = ''.join(self.fetched_password)
-            mydb.commit()
+            # mydb.commit()
             if(self.fetched_password == self.password):
                 self.HomeCall(self.email,self.password)
             else:
