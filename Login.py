@@ -6,6 +6,7 @@ import mysql.connector as mc
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Homepage import Ui_HomeWindow
 import media
+import Signup
 
 
 class Ui_LoginWindow(object):
@@ -13,6 +14,11 @@ class Ui_LoginWindow(object):
         self.window = QtWidgets.QMainWindow()
         self.ui = Ui_HomeWindow()
         self.ui.setupUi(self.window,email,password)
+        self.window.show()
+    def Regcall(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Signup.Ui_SignupWindow()
+        self.ui.setupUi(self.window)
         self.window.show()
     def check_credentials(self,email,password):
         self.email = email
@@ -172,7 +178,8 @@ class Ui_LoginWindow(object):
         self.label_7.setStyleSheet("color: rgb(36, 36, 36);")
         self.label_7.setObjectName("label_7")
         self.horizontalLayout_2.addWidget(self.label_7, 0, QtCore.Qt.AlignRight)
-        self.signup_button = QtWidgets.QPushButton(self.frame_3)
+        self.signup_button = QtWidgets.QPushButton(self.frame_3, clicked = lambda: self.Regcall())
+        self.signup_button.clicked.connect(MainWindow.close)
         font = QtGui.QFont()
         font.setFamily("Leelawadee UI")
         font.setPointSize(16)
