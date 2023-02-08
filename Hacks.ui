@@ -425,7 +425,7 @@ QPushButton:pressed{
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>-64</y>
+         <y>0</y>
          <width>1231</width>
          <height>1430</height>
         </rect>
@@ -723,7 +723,13 @@ border-radius:15px;</string>
                         </font>
                        </property>
                        <property name="styleSheet">
-                        <string notr="true">color: rgb(45, 3, 59);</string>
+                        <string notr="true">QLabel{
+color: rgb(45, 3, 59);
+text-align:center;
+}
+QLabel:hover{	
+	color: rgb(255, 0, 0);
+}</string>
                        </property>
                        <property name="text">
                         <string>Conducting Institution's name</string>
