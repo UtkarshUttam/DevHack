@@ -1,12 +1,17 @@
 import media
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QLabel
+from PyQt5.QtGui import QDesktopServices
+from PyQt5.QtCore import QUrl
 import mysql.connector as mc
 import sys
 import Homepage
 import Internship
 
-
 class Ui_HackWindow(object):
+    def link(self, linkStr):
+        QDesktopServices.openUrl(QUrl(linkStr))
+
     def HomeCall(self,email,password):
         self.window = QtWidgets.QMainWindow()
         self.ui = Homepage.Ui_HomeWindow()
@@ -372,21 +377,28 @@ class Ui_HackWindow(object):
                 font.setFamily("Leelawadee UI")
                 font.setPointSize(16)
                 self.label_5.setFont(font)
-                self.label_5.setText(self.name_of_hack[5])
-                self.label_5.setStyleSheet("color: rgb(45, 3, 59);")
+                self.label_5.linkActivated.connect(self.link)
+                self.label_5.setText('<a href="'+self.name_of_hack[5]+'">'+self.name_of_hack[5]+'</a>')
+                self.label_5.setStyleSheet("QLabel{\n"
+"color: rgb(45, 3, 59);\n"
+"}\n"
+"QLabel:hover{\n"
+"color: rgb(255, 0, 0);\n"
+"}")
                 self.label_5.setObjectName("label_5")
                 self.verticalLayout_6.addWidget(self.label_5)
-                self.pushButton_8 = QtWidgets.QPushButton(self.frame_12)
+                self.pushButton_8 = QtWidgets.QLabel(self.frame_12)
                 self.pushButton_8.setMinimumSize(QtCore.QSize(0, 50))
                 font = QtGui.QFont()
                 font.setFamily("Leelawadee UI")
                 font.setPointSize(16)
                 font.setBold(True)
                 self.pushButton_8.setFont(font)
-                self.pushButton_8.setText("Apply")
+                self.pushButton_8.setText('<center><a href="'+self.name_of_hack[2]+'"style ="color:white"> Apply</a></center>')
                 self.pushButton_8.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
                 self.pushButton_8.setStyleSheet("background-color: rgb(45, 3, 59);\n"
                 "color: rgb(255, 255, 255);")
+                self.pushButton_8.linkActivated.connect(self.link)
                 self.pushButton_8.setObjectName("pushButton_8")
                 self.verticalLayout_6.addWidget(self.pushButton_8)
                 self.horizontalLayout_3.addWidget(self.frame_12)
