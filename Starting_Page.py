@@ -1,6 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Login import Ui_LoginWindow
-from Signup import Ui_SignupWindow
+import Signup
 import media
 
 
@@ -14,7 +14,7 @@ class Ui_StartWindow(object):
 
     def Regcall(self):
         self.window = QtWidgets.QMainWindow()
-        self.ui = Ui_SignupWindow()
+        self.ui = Signup.Ui_SignupWindow()
         self.ui.setupUi(self.window)
         self.window.show()
 
