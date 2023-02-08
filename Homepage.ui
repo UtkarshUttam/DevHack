@@ -70,10 +70,11 @@
          </property>
          <property name="styleSheet">
           <string notr="true">border-radius:50px;
-background-color: rgb(45, 3, 59);</string>
+background-color: rgb(45, 3, 59);
+image: url(:/icons/media/D-logo.png);</string>
          </property>
          <property name="text">
-          <string>PushButton</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -419,9 +420,9 @@ QPushButton:pressed{
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>0</y>
+         <y>-1888</y>
          <width>1231</width>
-         <height>2436</height>
+         <height>2836</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -430,7 +431,7 @@ QPushButton:pressed{
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>1000</height>
+            <height>1400</height>
            </size>
           </property>
           <property name="frameShape">
@@ -442,15 +443,24 @@ QPushButton:pressed{
           <layout class="QVBoxLayout" name="verticalLayout_2">
            <item>
             <widget class="QFrame" name="poster_area">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>500</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>250</height>
+               <height>16777215</height>
               </size>
              </property>
              <property name="styleSheet">
               <string notr="true">background-color: rgb(255, 255, 255);
-</string>
+background-image: url(:/images/media/sliderbannerM32.jpg);</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -462,6 +472,12 @@ QPushButton:pressed{
            </item>
            <item>
             <widget class="QFrame" name="Hackathons_and_Internship_area">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
              </property>
@@ -533,7 +549,7 @@ QPushButton:hover{
                </widget>
               </item>
               <item>
-               <widget class="QFrame" name="Hackathons_holder_area">
+               <widget class="QFrame" name="Hackathons_holder_area_2">
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(45, 3, 59);
 border-radius:40px;</string>
@@ -544,7 +560,7 @@ border-radius:40px;</string>
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <layout class="QHBoxLayout" name="horizontalLayout_16">
+                <layout class="QHBoxLayout" name="horizontalLayout_17">
                  <property name="spacing">
                   <number>15</number>
                  </property>
@@ -558,7 +574,7 @@ border-radius:40px;</string>
                   <number>15</number>
                  </property>
                  <item>
-                  <widget class="QPushButton" name="pushButton">
+                  <widget class="QPushButton" name="pushButton_4">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -592,7 +608,7 @@ QPushButton:hover{
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButton_2">
+                  <widget class="QPushButton" name="pushButton_5">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -626,7 +642,7 @@ QPushButton:hover{
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButton_3">
+                  <widget class="QPushButton" name="pushButton_6">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -720,9 +736,10 @@ QPushButton:hover{
                </widget>
               </item>
               <item>
-               <widget class="QFrame" name="frame_12">
+               <widget class="QFrame" name="Hackathons_holder_area">
                 <property name="styleSheet">
-                 <string notr="true">background-color: rgb(45, 3, 59);</string>
+                 <string notr="true">background-color: rgb(45, 3, 59);
+border-radius:40px;</string>
                 </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
@@ -730,6 +747,122 @@ QPushButton:hover{
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_16">
+                 <property name="spacing">
+                  <number>15</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>15</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>9</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>15</number>
+                 </property>
+                 <item>
+                  <widget class="QPushButton" name="pushButton">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>300</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Leelawadee UI</family>
+                     <pointsize>26</pointsize>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
+border-radius:50px;
+background-image: url(/media/image1.png);
+}
+
+QPushButton:hover{
+	background-image: url(/media/image11.png);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Internship_1</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>300</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Leelawadee UI</family>
+                     <pointsize>26</pointsize>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
+background-image: url(/media/image2.png);
+border-radius:50px;
+}
+
+QPushButton:hover{
+	background-image: url(/media/image21.png);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Internship_2</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_3">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>300</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Leelawadee UI</family>
+                     <pointsize>26</pointsize>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="cursor">
+                    <cursorShape>PointingHandCursor</cursorShape>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
+border-radius:50px;
+background-image: url(/media/image3.png);
+}
+
+QPushButton:hover{
+	background-image: url(/media/image31.png);
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Internship_3</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
              </layout>
@@ -916,10 +1049,11 @@ color: rgb(255, 255, 255);
                    </property>
                    <property name="styleSheet">
                     <string notr="true">border-radius:50px;
-background-color: rgb(255, 99, 102);</string>
+image: url(:/icons/media/hack_circle.png);
+</string>
                    </property>
                    <property name="text">
-                    <string>PushButton</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -997,10 +1131,10 @@ hackathons</string>
                    </property>
                    <property name="styleSheet">
                     <string notr="true">border-radius:50px;
-background-color: rgb(255, 99, 102);</string>
+image: url(:/icons/media/internship_circle.png);</string>
                    </property>
                    <property name="text">
-                    <string>PushButton</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -1078,10 +1212,10 @@ resume</string>
                    </property>
                    <property name="styleSheet">
                     <string notr="true">border-radius:50px;
-background-color: rgb(255, 99, 102);</string>
+image: url(:/icons/media/contest_circle.png);</string>
                    </property>
                    <property name="text">
-                    <string>PushButton</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -2078,7 +2212,7 @@ border-radius:50px;</string>
   </widget>
  </widget>
  <resources>
-  <!-- <include location="media.qrc"/> -->
+  <include location="media.qrc"/>
  </resources>
  <connections/>
 </ui>
