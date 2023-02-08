@@ -1,5 +1,8 @@
 <RCC>
   <qresource prefix="icons">
+    <file>media/contest_circle.png</file>
+    <file>media/internship_circle.png</file>
+    <file>media/hack_circle.png</file>
     <file>media/Color logo black - no background.png</file>
     <file>media/D-logo.png</file>
     <file>media/white_logo.png</file>
@@ -14,12 +17,14 @@
   </qresource>
   <qresource prefix="images">
     <file>media/BG_img1.png</file>
+    <file>media/MISSION UNICORN BANNER.png</file>
     <file>media/image21.png</file>
     <file>media/image31.png</file>
     <file>media/wallpapersden.com_abstract-purple-shape_2560x1300.jpg</file>
     <file>media/image1.png</file>
     <file>media/image3.png</file>
     <file>media/How-do-hackathons-work.png</file>
+    <file>media/sliderbannerM32.jpg</file>
     <file>media/image2.png</file>
     <file>media/White_dot_pattern.png</file>
     <file>media/image11.png</file>
