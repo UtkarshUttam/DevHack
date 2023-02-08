@@ -1,5 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from Login import Ui_LoginWindow
+import Login
 from PyQt5.QtWidgets import *
 import mysql.connector as mc
 import sys
@@ -8,7 +8,7 @@ import media
 class Ui_SignupWindow(QMainWindow):
     def Logincall(self):
         self.window = QtWidgets.QMainWindow()
-        self.ui = Ui_LoginWindow()
+        self.ui = Login.Ui_LoginWindow()
         self.ui.setupUi(self.window)
         self.window.show()
     def reg_action(self,name,mobile,email,pass1,pass2):
@@ -311,6 +311,7 @@ class Ui_SignupWindow(QMainWindow):
         self.label_9.setObjectName("label_9")
         self.horizontalLayout_3.addWidget(self.label_9, 0, QtCore.Qt.AlignRight)
         self.Log_in_pushbutton = QtWidgets.QPushButton(self.frame_7, clicked = lambda: self.Logincall())
+        self.Log_in_pushbutton.clicked.connect(SignupWindow.close)
         font = QtGui.QFont()
         font.setFamily("Leelawadee UI")
         font.setPointSize(18)
