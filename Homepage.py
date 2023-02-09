@@ -284,6 +284,7 @@ class Ui_HomeWindow(object):
         self.See_All_1.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.See_All_1.setStyleSheet("QPushButton{\n"
 "color: rgb(129, 12, 168);\n"
+"border:None;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
@@ -391,6 +392,7 @@ class Ui_HomeWindow(object):
         self.See_All_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.See_All_2.setStyleSheet("QPushButton{\n"
 "color: rgb(129, 12, 168);\n"
+"border:None;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
