@@ -550,7 +550,7 @@ QPushButton:hover{
                </widget>
               </item>
               <item>
-               <widget class="QFrame" name="Hackathons_holder_area_2">
+               <widget class="QFrame" name="Hackathons_holder_area">
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(45, 3, 59);
 border-radius:40px;</string>
