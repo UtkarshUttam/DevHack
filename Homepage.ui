@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1250</width>
-    <height>1070</height>
+    <width>1920</width>
+    <height>1080</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -377,15 +377,16 @@ QPushButton:pressed{
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-image: url(:/icons/notification_light_purple.png);
+	image: url(:/icons/media/notification_light_purple.png);
+	border:None;
 }
 
 QPushButton:hover{
-image: url(:/icons/notification_white.png);
+	image: url(:/icons/media/notification_white.png);
 }
 
 QPushButton:pressed{
-	image: url(:/icons/notification.png);
+	image: url(:/icons/media/notification.png);
 }</string>
          </property>
          <property name="text">
@@ -420,9 +421,9 @@ QPushButton:pressed{
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>-1888</y>
-         <width>1231</width>
-         <height>2836</height>
+         <y>-2078</y>
+         <width>1901</width>
+         <height>3036</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -574,7 +575,7 @@ border-radius:40px;</string>
                   <number>15</number>
                  </property>
                  <item>
-                  <widget class="QPushButton" name="pushButton_4">
+                  <widget class="QPushButton" name="Hack_1_pb">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -595,11 +596,11 @@ border-radius:40px;</string>
                     <string notr="true">QPushButton{
 color: rgb(255, 255, 255);
 border-radius:50px;
-background-image: url(/media/image1.png);
+	background-image: url(:/images/media/image1.png);
 }
 
 QPushButton:hover{
-	background-image: url(/media/image11.png);
+	background-image: url(:/images/media/image11.png);
 }</string>
                    </property>
                    <property name="text">
@@ -608,7 +609,7 @@ QPushButton:hover{
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButton_5">
+                  <widget class="QPushButton" name="Hack_2_pb">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -628,12 +629,12 @@ QPushButton:hover{
                    <property name="styleSheet">
                     <string notr="true">QPushButton{
 color: rgb(255, 255, 255);
-background-image: url(/media/image2.png);
+background-image: url(:/images/media/image2.png);
 border-radius:50px;
 }
 
 QPushButton:hover{
-	background-image: url(/media/image21.png);
+	background-image: url(:/images/media/image21.png);
 }</string>
                    </property>
                    <property name="text">
@@ -642,7 +643,7 @@ QPushButton:hover{
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButton_6">
+                  <widget class="QPushButton" name="Hack_3_pb">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -663,11 +664,11 @@ QPushButton:hover{
                     <string notr="true">QPushButton{
 color: rgb(255, 255, 255);
 border-radius:50px;
-background-image: url(/media/image3.png);
+background-image: url(:/images/media/image3.png);
 }
 
 QPushButton:hover{
-	background-image: url(/media/image31.png);
+	background-image: url(:/images/media/image31.png);
 }</string>
                    </property>
                    <property name="text">
@@ -761,7 +762,7 @@ border-radius:40px;</string>
                   <number>15</number>
                  </property>
                  <item>
-                  <widget class="QPushButton" name="pushButton">
+                  <widget class="QPushButton" name="Intern_1_pb">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -782,11 +783,11 @@ border-radius:40px;</string>
                     <string notr="true">QPushButton{
 color: rgb(255, 255, 255);
 border-radius:50px;
-background-image: url(/media/image1.png);
+background-image: url(:/images/media/image1.png);
 }
 
 QPushButton:hover{
-	background-image: url(/media/image11.png);
+	background-image: url(:/images/media/image11.png);
 }</string>
                    </property>
                    <property name="text">
@@ -795,7 +796,7 @@ QPushButton:hover{
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButton_2">
+                  <widget class="QPushButton" name="Intern_2_pb">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -815,12 +816,12 @@ QPushButton:hover{
                    <property name="styleSheet">
                     <string notr="true">QPushButton{
 color: rgb(255, 255, 255);
-background-image: url(/media/image2.png);
+background-image: url(:/images/media/image2.png);
 border-radius:50px;
 }
 
 QPushButton:hover{
-	background-image: url(/media/image21.png);
+	background-image: url(:/images/media/image21.png);
 }</string>
                    </property>
                    <property name="text">
@@ -829,7 +830,7 @@ QPushButton:hover{
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButton_3">
+                  <widget class="QPushButton" name="Intern_3_pb">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -850,11 +851,11 @@ QPushButton:hover{
                     <string notr="true">QPushButton{
 color: rgb(255, 255, 255);
 border-radius:50px;
-background-image: url(/media/image3.png);
+background-image: url(:/images/media/image3.png);
 }
 
 QPushButton:hover{
-	background-image: url(/media/image31.png);
+	background-image: url(:/images/media/image31.png);
 }</string>
                    </property>
                    <property name="text">
@@ -1010,7 +1011,7 @@ color: rgb(255, 255, 255);
              </property>
              <property name="maximumSize">
               <size>
-               <width>400</width>
+               <width>500</width>
                <height>16777215</height>
               </size>
              </property>
@@ -1278,7 +1279,7 @@ image: url(:/icons/media/contest_circle.png);</string>
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>600</height>
+            <height>800</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -1340,12 +1341,12 @@ border-radius: 15px;</string>
                   <widget class="QLabel" name="label_14">
                    <property name="minimumSize">
                     <size>
-                     <width>0</width>
-                     <height>300</height>
+                     <width>438</width>
+                     <height>438</height>
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">image: url(:/images/images.png);
+                    <string notr="true">background-image: url(:/images/media/Utkarsh_front.png);
 border-bottom-left-radius:60px;
 border-bottom-right-radius:60px;
 background-color: rgb(255, 255, 255);</string>
@@ -1408,7 +1409,7 @@ background-color: rgb(255, 255, 255);</string>
                       </property>
                       <property name="styleSheet">
                        <string notr="true">
-image: url(:/icons/LinkedIn-Symbole.png);
+image: url(:/icons/media/LinkedIn-Symbole.png);
 border-radius:30px;</string>
                       </property>
                       <property name="text">
@@ -1431,7 +1432,7 @@ border-radius:30px;</string>
                        </size>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">image: url(:/icons/insta.png);
+                       <string notr="true">image: url(:/icons/media/insta.png);
 border-radius:30px;</string>
                       </property>
                       <property name="text">
@@ -1454,7 +1455,7 @@ border-radius:30px;</string>
                        </size>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">image: url(:/icons/github-logo.png);
+                       <string notr="true">image: url(:/icons/media/github-logo.png);
 border-radius:30px;</string>
                       </property>
                       <property name="text">
@@ -1485,12 +1486,12 @@ border-radius: 15px;</string>
                   <widget class="QLabel" name="label_16">
                    <property name="minimumSize">
                     <size>
-                     <width>0</width>
-                     <height>300</height>
+                     <width>438</width>
+                     <height>438</height>
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">image: url(:/images/images.png);
+                    <string notr="true">background-image: url(:/images/media/OP_bg.png);
 border-bottom-left-radius:60px;
 border-bottom-right-radius:60px;
 background-color: rgb(255, 255, 255);</string>
@@ -1552,8 +1553,7 @@ background-color: rgb(255, 255, 255);</string>
                        </size>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">
-image: url(:/icons/LinkedIn-Symbole.png);
+                       <string notr="true">image: url(:/icons/media/LinkedIn-Symbole.png);
 border-radius:30px;</string>
                       </property>
                       <property name="text">
@@ -1576,7 +1576,7 @@ border-radius:30px;</string>
                        </size>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">image: url(:/icons/insta.png);
+                       <string notr="true">image: url(:/icons/media/insta.png);
 border-radius:30px;</string>
                       </property>
                       <property name="text">
@@ -1599,7 +1599,7 @@ border-radius:30px;</string>
                        </size>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">image: url(:/icons/github-logo.png);
+                       <string notr="true">image: url(:/icons/media/github-logo.png);
 border-radius:30px;</string>
                       </property>
                       <property name="text">
@@ -1630,8 +1630,8 @@ border-radius: 15px;</string>
                   <widget class="QLabel" name="label_20">
                    <property name="minimumSize">
                     <size>
-                     <width>0</width>
-                     <height>300</height>
+                     <width>438</width>
+                     <height>438</height>
                     </size>
                    </property>
                    <property name="styleSheet">
@@ -1697,8 +1697,7 @@ background-color: rgb(255, 255, 255);</string>
                        </size>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">
-image: url(:/icons/LinkedIn-Symbole.png);
+                       <string notr="true">image: url(:/icons/media/LinkedIn-Symbole.png);
 border-radius:30px;</string>
                       </property>
                       <property name="text">
@@ -1721,7 +1720,7 @@ border-radius:30px;</string>
                        </size>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">image: url(:/icons/insta.png);
+                       <string notr="true">image: url(:/icons/media/insta.png);
 border-radius:30px;</string>
                       </property>
                       <property name="text">
@@ -1744,7 +1743,7 @@ border-radius:30px;</string>
                        </size>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">image: url(:/icons/github-logo.png);
+                       <string notr="true">image: url(:/icons/media/github-logo.png);
 border-radius:30px;</string>
                       </property>
                       <property name="text">
@@ -1775,8 +1774,8 @@ border-radius: 15px;</string>
                   <widget class="QLabel" name="label_18">
                    <property name="minimumSize">
                     <size>
-                     <width>0</width>
-                     <height>300</height>
+                     <width>438</width>
+                     <height>438</height>
                     </size>
                    </property>
                    <property name="styleSheet">
@@ -1842,8 +1841,7 @@ background-color: rgb(255, 255, 255);</string>
                        </size>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">
-image: url(:/icons/LinkedIn-Symbole.png);
+                       <string notr="true">image: url(:/icons/media/LinkedIn-Symbole.png);
 border-radius:30px;</string>
                       </property>
                       <property name="text">
@@ -1866,7 +1864,7 @@ border-radius:30px;</string>
                        </size>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">image: url(:/icons/insta.png);
+                       <string notr="true">image: url(:/icons/media/insta.png);
 border-radius:30px;</string>
                       </property>
                       <property name="text">
@@ -1889,7 +1887,7 @@ border-radius:30px;</string>
                        </size>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">image: url(:/icons/github-logo.png);
+                       <string notr="true">image: url(:/icons/media/github-logo.png);
 border-radius:30px;</string>
                       </property>
                       <property name="text">
@@ -1909,7 +1907,7 @@ border-radius:30px;</string>
           </layout>
          </widget>
         </item>
-        <item>
+        <item alignment="Qt::AlignBottom">
          <widget class="QFrame" name="frame_15">
           <property name="minimumSize">
            <size>
@@ -2141,7 +2139,7 @@ border-radius: 35px;</string>
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">image: url(:/icons/facebook.png);
+                    <string notr="true">image: url(:/icons/media/facebook.png);
 border-radius:50px;</string>
                    </property>
                    <property name="text">
@@ -2164,7 +2162,7 @@ border-radius:50px;</string>
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">image: url(:/icons/twitter.png);
+                    <string notr="true">image: url(:/icons/media/twitter.png);
 border-radius:50px;</string>
                    </property>
                    <property name="text">
@@ -2187,7 +2185,7 @@ border-radius:50px;</string>
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">image: url(:/icons/insta.png);
+                    <string notr="true">image: url(:/icons/media/insta.png);
 border-radius:50px;</string>
                    </property>
                    <property name="text">
