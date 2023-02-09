@@ -20,9 +20,13 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(180, 100, 206);</string>
+   <string notr="true">/*background-color: rgb(180, 100, 206);*/
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0.0568182, stop:0.204545 rgba(180, 100, 206, 255), stop:1 rgba(94, 53, 108, 255));</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QFrame" name="frame">
@@ -33,7 +37,7 @@
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background:None;</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -69,7 +73,7 @@
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">image: url(/media/white_logo.png);</string>
+             <string notr="true">image: url(:/icons/media/white_logo.png);</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -126,6 +130,9 @@ QPushButton:hover{
     </item>
     <item>
      <widget class="QFrame" name="frame_2">
+      <property name="styleSheet">
+       <string notr="true">background:None;</string>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -253,55 +260,26 @@ QPushButton:pressed{
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <layout class="QGridLayout" name="gridLayout">
-          <item row="0" column="3">
-           <widget class="QFrame" name="frame_10">
-            <property name="styleSheet">
-             <string notr="true">background:transparent;
-image:None;</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QFrame" name="frame_11">
-            <property name="styleSheet">
-             <string notr="true">background:transparent;
-image:None;</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="3">
-           <widget class="QFrame" name="frame_13">
-            <property name="styleSheet">
-             <string notr="true">background:transparent;
-image:None;</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0" colspan="3">
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
            <widget class="QFrame" name="frame_8">
             <property name="styleSheet">
-             <string notr="true">/*background:transparent;*/
-image: url(:/images/How-do-hackathons-work.png);
-</string>
+             <string notr="true">border:None;</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -309,14 +287,65 @@ image: url(:/images/How-do-hackathons-work.png);
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item alignment="Qt::AlignTop">
+              <widget class="QFrame" name="frame_11">
+               <property name="minimumSize">
+                <size>
+                 <width>445</width>
+                 <height>420</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">image: url(:/images/media/starting_page_poster1.jpg);</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>89</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item alignment="Qt::AlignBottom">
+              <widget class="QFrame" name="frame_12">
+               <property name="minimumSize">
+                <size>
+                 <width>445</width>
+                 <height>420</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">image: url(:/images/media/starting_page_poster3.jpg);</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </item>
-          <item row="1" column="1" colspan="3">
-           <widget class="QFrame" name="frame_14">
+          <item>
+           <widget class="QFrame" name="frame_10">
             <property name="styleSheet">
-             <string notr="true">/*background:transparent;*/
-background-color: rgb(255, 170, 0);
-image:None;</string>
+             <string notr="true">border:None;</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -324,21 +353,59 @@ image:None;</string>
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-           </widget>
-          </item>
-          <item row="3" column="0" colspan="3">
-           <widget class="QFrame" name="frame_12">
-            <property name="styleSheet">
-             <string notr="true">/*background:transparent;*/
-background-color: rgb(255, 170, 0);
-image:None;</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QFrame" name="frame_13">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>250</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignLeft">
+              <widget class="QFrame" name="frame_15">
+               <property name="minimumSize">
+                <size>
+                 <width>445</width>
+                 <height>455</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">image: url(:/images/media/starting_page_poster2.jpg);</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="frame_14">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>200</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </item>
          </layout>
@@ -351,7 +418,7 @@ image:None;</string>
   </widget>
  </widget>
  <resources>
-  <!-- <include location="media.qrc"/> -->
+  <include location="media.qrc"/>
  </resources>
  <connections/>
 </ui>
