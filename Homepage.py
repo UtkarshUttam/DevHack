@@ -19,7 +19,7 @@ class Ui_HomeWindow(object):
         self.email = email
         self.password = password
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1250, 1070)
+        MainWindow.resize(1920, 1080)
         MainWindow.setStyleSheet("background-color: rgb(229, 184, 244);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setMinimumSize(QtCore.QSize(1250, 800))
@@ -39,7 +39,9 @@ class Ui_HomeWindow(object):
         self.User_Icon.setMinimumSize(QtCore.QSize(0, 100))
         self.User_Icon.setMaximumSize(QtCore.QSize(100, 16777215))
         self.User_Icon.setStyleSheet("border-radius:50px;\n"
-"background-color: rgb(45, 3, 59);")
+"background-color: rgb(45, 3, 59);\n"
+"image: url(:/icons/media/D-logo.png);")
+        self.User_Icon.setText("")
         self.User_Icon.setObjectName("User_Icon")
         self.horizontalLayout.addWidget(self.User_Icon)
         self.frame_3 = QtWidgets.QFrame(self.frame)
@@ -208,11 +210,12 @@ class Ui_HomeWindow(object):
         self.Notifications_button.setMinimumSize(QtCore.QSize(0, 70))
         self.Notifications_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.Notifications_button.setStyleSheet("QPushButton{\n"
-"image: url(:/icons/media/notification_light_purple.png);\n"
-"border:None;}\n"
+"    image: url(:/icons/media/notification_light_purple.png);\n"
+"    border:None;\n"
+"}\n"
 "\n"
 "QPushButton:hover{\n"
-"image: url(:/icons/media/notification_white.png);\n"
+"    image: url(:/icons/media/notification_white.png);\n"
 "}\n"
 "\n"
 "QPushButton:pressed{\n"
@@ -231,26 +234,29 @@ class Ui_HomeWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 1231, 2436))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, -2078, 1901, 3036))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
         self.frame_2 = QtWidgets.QFrame(self.scrollAreaWidgetContents)
-        self.frame_2.setMinimumSize(QtCore.QSize(0, 1000))
+        self.frame_2.setMinimumSize(QtCore.QSize(0, 1400))
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.frame_2)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.poster_area = QtWidgets.QFrame(self.frame_2)
-        self.poster_area.setMaximumSize(QtCore.QSize(16777215, 250))
+        self.poster_area.setEnabled(True)
+        self.poster_area.setMinimumSize(QtCore.QSize(0, 500))
+        self.poster_area.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.poster_area.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"")
+"background-image: url(:/images/media/sliderbannerM32.jpg);")
         self.poster_area.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.poster_area.setFrameShadow(QtWidgets.QFrame.Raised)
         self.poster_area.setObjectName("poster_area")
         self.verticalLayout_2.addWidget(self.poster_area)
         self.Hackathons_and_Internship_area = QtWidgets.QFrame(self.frame_2)
+        self.Hackathons_and_Internship_area.setMinimumSize(QtCore.QSize(0, 0))
         self.Hackathons_and_Internship_area.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.Hackathons_and_Internship_area.setFrameShadow(QtWidgets.QFrame.Raised)
         self.Hackathons_and_Internship_area.setObjectName("Hackathons_and_Internship_area")
@@ -292,38 +298,38 @@ class Ui_HomeWindow(object):
         self.Hackathons_holder_area.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.Hackathons_holder_area.setFrameShadow(QtWidgets.QFrame.Raised)
         self.Hackathons_holder_area.setObjectName("Hackathons_holder_area")
-        self.horizontalLayout_16 = QtWidgets.QHBoxLayout(self.Hackathons_holder_area)
-        self.horizontalLayout_16.setContentsMargins(15, 9, 15, -1)
-        self.horizontalLayout_16.setSpacing(15)
-        self.horizontalLayout_16.setObjectName("horizontalLayout_16")
-        self.pushButton = QtWidgets.QPushButton(self.Hackathons_holder_area)
-        self.pushButton.setMinimumSize(QtCore.QSize(0, 300))
+        self.horizontalLayout_17 = QtWidgets.QHBoxLayout(self.Hackathons_holder_area)
+        self.horizontalLayout_17.setContentsMargins(15, 9, 15, -1)
+        self.horizontalLayout_17.setSpacing(15)
+        self.horizontalLayout_17.setObjectName("horizontalLayout_17")
+        self.Hack_1_pb = QtWidgets.QPushButton(self.Hackathons_holder_area)
+        self.Hack_1_pb.setMinimumSize(QtCore.QSize(0, 300))
         font = QtGui.QFont()
         font.setFamily("Leelawadee UI")
         font.setPointSize(26)
         font.setBold(True)
-        self.pushButton.setFont(font)
-        self.pushButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton.setStyleSheet("QPushButton{\n"
+        self.Hack_1_pb.setFont(font)
+        self.Hack_1_pb.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Hack_1_pb.setStyleSheet("QPushButton{\n"
 "color: rgb(255, 255, 255);\n"
 "border-radius:50px;\n"
-"background-image: url(:/images/media/image1.png);\n"
+"    background-image: url(:/images/media/image1.png);\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
 "    background-image: url(:/images/media/image11.png);\n"
 "}")
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout_16.addWidget(self.pushButton)
-        self.pushButton_2 = QtWidgets.QPushButton(self.Hackathons_holder_area)
-        self.pushButton_2.setMinimumSize(QtCore.QSize(0, 300))
+        self.Hack_1_pb.setObjectName("Hack_1_pb")
+        self.horizontalLayout_17.addWidget(self.Hack_1_pb)
+        self.Hack_2_pb = QtWidgets.QPushButton(self.Hackathons_holder_area)
+        self.Hack_2_pb.setMinimumSize(QtCore.QSize(0, 300))
         font = QtGui.QFont()
         font.setFamily("Leelawadee UI")
         font.setPointSize(26)
         font.setBold(True)
-        self.pushButton_2.setFont(font)
-        self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_2.setStyleSheet("QPushButton{\n"
+        self.Hack_2_pb.setFont(font)
+        self.Hack_2_pb.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Hack_2_pb.setStyleSheet("QPushButton{\n"
 "color: rgb(255, 255, 255);\n"
 "background-image: url(:/images/media/image2.png);\n"
 "border-radius:50px;\n"
@@ -332,17 +338,17 @@ class Ui_HomeWindow(object):
 "QPushButton:hover{\n"
 "    background-image: url(:/images/media/image21.png);\n"
 "}")
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.horizontalLayout_16.addWidget(self.pushButton_2)
-        self.pushButton_3 = QtWidgets.QPushButton(self.Hackathons_holder_area)
-        self.pushButton_3.setMinimumSize(QtCore.QSize(0, 300))
+        self.Hack_2_pb.setObjectName("Hack_2_pb")
+        self.horizontalLayout_17.addWidget(self.Hack_2_pb)
+        self.Hack_3_pb = QtWidgets.QPushButton(self.Hackathons_holder_area)
+        self.Hack_3_pb.setMinimumSize(QtCore.QSize(0, 300))
         font = QtGui.QFont()
         font.setFamily("Leelawadee UI")
         font.setPointSize(26)
         font.setBold(True)
-        self.pushButton_3.setFont(font)
-        self.pushButton_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_3.setStyleSheet("QPushButton{\n"
+        self.Hack_3_pb.setFont(font)
+        self.Hack_3_pb.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Hack_3_pb.setStyleSheet("QPushButton{\n"
 "color: rgb(255, 255, 255);\n"
 "border-radius:50px;\n"
 "background-image: url(:/images/media/image3.png);\n"
@@ -351,8 +357,8 @@ class Ui_HomeWindow(object):
 "QPushButton:hover{\n"
 "    background-image: url(:/images/media/image31.png);\n"
 "}")
-        self.pushButton_3.setObjectName("pushButton_3")
-        self.horizontalLayout_16.addWidget(self.pushButton_3)
+        self.Hack_3_pb.setObjectName("Hack_3_pb")
+        self.horizontalLayout_17.addWidget(self.Hack_3_pb)
         self.verticalLayout_3.addWidget(self.Hackathons_holder_area)
         self.Internship_heading_area = QtWidgets.QFrame(self.Hackathons_and_Internship_area)
         self.Internship_heading_area.setMaximumSize(QtCore.QSize(16777215, 50))
@@ -383,12 +389,74 @@ class Ui_HomeWindow(object):
         self.See_All_2.setObjectName("See_All_2")
         self.horizontalLayout_2.addWidget(self.See_All_2, 0, QtCore.Qt.AlignRight)
         self.verticalLayout_3.addWidget(self.Internship_heading_area)
-        self.frame_12 = QtWidgets.QFrame(self.Hackathons_and_Internship_area)
-        self.frame_12.setStyleSheet("background-color: rgb(45, 3, 59);")
-        self.frame_12.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_12.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_12.setObjectName("frame_12")
-        self.verticalLayout_3.addWidget(self.frame_12)
+        self.Internships_holder_area = QtWidgets.QFrame(self.Hackathons_and_Internship_area)
+        self.Internships_holder_area.setStyleSheet("background-color: rgb(45, 3, 59);\n"
+"border-radius:40px;")
+        self.Internships_holder_area.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.Internships_holder_area.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.Internships_holder_area.setObjectName("Internships_holder_area")
+        self.horizontalLayout_16 = QtWidgets.QHBoxLayout(self.Internships_holder_area)
+        self.horizontalLayout_16.setContentsMargins(15, 9, 15, -1)
+        self.horizontalLayout_16.setSpacing(15)
+        self.horizontalLayout_16.setObjectName("horizontalLayout_16")
+        self.Intern_1_pb = QtWidgets.QPushButton(self.Internships_holder_area)
+        self.Intern_1_pb.setMinimumSize(QtCore.QSize(0, 300))
+        font = QtGui.QFont()
+        font.setFamily("Leelawadee UI")
+        font.setPointSize(26)
+        font.setBold(True)
+        self.Intern_1_pb.setFont(font)
+        self.Intern_1_pb.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Intern_1_pb.setStyleSheet("QPushButton{\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius:50px;\n"
+"background-image: url(:/images/media/image1.png);\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-image: url(:/images/media/image11.png);\n"
+"}")
+        self.Intern_1_pb.setObjectName("Intern_1_pb")
+        self.horizontalLayout_16.addWidget(self.Intern_1_pb)
+        self.Intern_2_pb = QtWidgets.QPushButton(self.Internships_holder_area)
+        self.Intern_2_pb.setMinimumSize(QtCore.QSize(0, 300))
+        font = QtGui.QFont()
+        font.setFamily("Leelawadee UI")
+        font.setPointSize(26)
+        font.setBold(True)
+        self.Intern_2_pb.setFont(font)
+        self.Intern_2_pb.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Intern_2_pb.setStyleSheet("QPushButton{\n"
+"color: rgb(255, 255, 255);\n"
+"background-image: url(:/images/media/image2.png);\n"
+"border-radius:50px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-image: url(:/images/media/image21.png);\n"
+"}")
+        self.Intern_2_pb.setObjectName("Intern_2_pb")
+        self.horizontalLayout_16.addWidget(self.Intern_2_pb)
+        self.Intern_3_pb = QtWidgets.QPushButton(self.Internships_holder_area)
+        self.Intern_3_pb.setMinimumSize(QtCore.QSize(0, 300))
+        font = QtGui.QFont()
+        font.setFamily("Leelawadee UI")
+        font.setPointSize(26)
+        font.setBold(True)
+        self.Intern_3_pb.setFont(font)
+        self.Intern_3_pb.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Intern_3_pb.setStyleSheet("QPushButton{\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius:50px;\n"
+"background-image: url(:/images/media/image3.png);\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-image: url(:/images/media/image31.png);\n"
+"}")
+        self.Intern_3_pb.setObjectName("Intern_3_pb")
+        self.horizontalLayout_16.addWidget(self.Intern_3_pb)
+        self.verticalLayout_3.addWidget(self.Internships_holder_area)
         self.verticalLayout_2.addWidget(self.Hackathons_and_Internship_area)
         self.verticalLayout_5.addWidget(self.frame_2)
         self.information_area = QtWidgets.QFrame(self.scrollAreaWidgetContents)
@@ -464,7 +532,7 @@ class Ui_HomeWindow(object):
         self.horizontalLayout_4.addWidget(self.Devhack_info_area)
         self.H_I_C_area = QtWidgets.QFrame(self.information_area)
         self.H_I_C_area.setMinimumSize(QtCore.QSize(400, 0))
-        self.H_I_C_area.setMaximumSize(QtCore.QSize(400, 16777215))
+        self.H_I_C_area.setMaximumSize(QtCore.QSize(500, 16777215))
         self.H_I_C_area.setStyleSheet("")
         self.H_I_C_area.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.H_I_C_area.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -481,7 +549,9 @@ class Ui_HomeWindow(object):
         self.H_button.setMinimumSize(QtCore.QSize(0, 100))
         self.H_button.setMaximumSize(QtCore.QSize(100, 16777215))
         self.H_button.setStyleSheet("border-radius:50px;\n"
-"background-color: rgb(255, 99, 102);")
+"image: url(:/icons/media/hack_circle.png);\n"
+"")
+        self.H_button.setText("")
         self.H_button.setObjectName("H_button")
         self.horizontalLayout_7.addWidget(self.H_button)
         self.frame_18 = QtWidgets.QFrame(self.H_area)
@@ -519,7 +589,8 @@ class Ui_HomeWindow(object):
         self.I_button.setMinimumSize(QtCore.QSize(0, 100))
         self.I_button.setMaximumSize(QtCore.QSize(100, 16777215))
         self.I_button.setStyleSheet("border-radius:50px;\n"
-"background-color: rgb(255, 99, 102);")
+"image: url(:/icons/media/internship_circle.png);")
+        self.I_button.setText("")
         self.I_button.setObjectName("I_button")
         self.horizontalLayout_6.addWidget(self.I_button)
         self.frame_20 = QtWidgets.QFrame(self.I_area)
@@ -557,7 +628,8 @@ class Ui_HomeWindow(object):
         self.C_button.setMinimumSize(QtCore.QSize(0, 100))
         self.C_button.setMaximumSize(QtCore.QSize(100, 16777215))
         self.C_button.setStyleSheet("border-radius:50px;\n"
-"background-color: rgb(255, 99, 102);")
+"image: url(:/icons/media/contest_circle.png);")
+        self.C_button.setText("")
         self.C_button.setObjectName("C_button")
         self.horizontalLayout_8.addWidget(self.C_button)
         self.frame_22 = QtWidgets.QFrame(self.C_area)
@@ -588,7 +660,7 @@ class Ui_HomeWindow(object):
         self.horizontalLayout_4.addWidget(self.H_I_C_area)
         self.verticalLayout_5.addWidget(self.information_area)
         self.frame_13 = QtWidgets.QFrame(self.scrollAreaWidgetContents)
-        self.frame_13.setMinimumSize(QtCore.QSize(0, 600))
+        self.frame_13.setMinimumSize(QtCore.QSize(0, 800))
         self.frame_13.setStyleSheet("")
         self.frame_13.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_13.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -620,8 +692,8 @@ class Ui_HomeWindow(object):
         self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.frame_23)
         self.verticalLayout_12.setObjectName("verticalLayout_12")
         self.label_14 = QtWidgets.QLabel(self.frame_23)
-        self.label_14.setMinimumSize(QtCore.QSize(0, 300))
-        self.label_14.setStyleSheet("image: url(:/images/images.png);\n"
+        self.label_14.setMinimumSize(QtCore.QSize(438, 438))
+        self.label_14.setStyleSheet("background-image: url(:/images/media/Utkarsh_front.png);\n"
 "border-bottom-left-radius:60px;\n"
 "border-bottom-right-radius:60px;\n"
 "background-color: rgb(255, 255, 255);")
@@ -680,8 +752,8 @@ class Ui_HomeWindow(object):
         self.verticalLayout_13 = QtWidgets.QVBoxLayout(self.frame_26)
         self.verticalLayout_13.setObjectName("verticalLayout_13")
         self.label_16 = QtWidgets.QLabel(self.frame_26)
-        self.label_16.setMinimumSize(QtCore.QSize(0, 300))
-        self.label_16.setStyleSheet("image: url(:/images/images.png);\n"
+        self.label_16.setMinimumSize(QtCore.QSize(438, 438))
+        self.label_16.setStyleSheet("background-image: url(:/images/media/OP_bg.png);\n"
 "border-bottom-left-radius:60px;\n"
 "border-bottom-right-radius:60px;\n"
 "background-color: rgb(255, 255, 255);")
@@ -707,8 +779,7 @@ class Ui_HomeWindow(object):
         self.Linked_In_O = QtWidgets.QPushButton(self.frame_27)
         self.Linked_In_O.setMinimumSize(QtCore.QSize(60, 60))
         self.Linked_In_O.setMaximumSize(QtCore.QSize(60, 16777215))
-        self.Linked_In_O.setStyleSheet("\n"
-"image: url(:/icons/media/LinkedIn-Symbole.png);\n"
+        self.Linked_In_O.setStyleSheet("image: url(:/icons/media/LinkedIn-Symbole.png);\n"
 "border-radius:30px;")
         self.Linked_In_O.setText("")
         self.Linked_In_O.setObjectName("Linked_In_O")
@@ -740,7 +811,7 @@ class Ui_HomeWindow(object):
         self.verticalLayout_15 = QtWidgets.QVBoxLayout(self.frame_30)
         self.verticalLayout_15.setObjectName("verticalLayout_15")
         self.label_20 = QtWidgets.QLabel(self.frame_30)
-        self.label_20.setMinimumSize(QtCore.QSize(0, 300))
+        self.label_20.setMinimumSize(QtCore.QSize(438, 438))
         self.label_20.setStyleSheet("image: url(:/images/images.png);\n"
 "border-bottom-left-radius:60px;\n"
 "border-bottom-right-radius:60px;\n"
@@ -767,8 +838,7 @@ class Ui_HomeWindow(object):
         self.Linked_In_AM = QtWidgets.QPushButton(self.frame_31)
         self.Linked_In_AM.setMinimumSize(QtCore.QSize(60, 60))
         self.Linked_In_AM.setMaximumSize(QtCore.QSize(60, 16777215))
-        self.Linked_In_AM.setStyleSheet("\n"
-"image: url(:/icons/media/LinkedIn-Symbole.png);\n"
+        self.Linked_In_AM.setStyleSheet("image: url(:/icons/media/LinkedIn-Symbole.png);\n"
 "border-radius:30px;")
         self.Linked_In_AM.setText("")
         self.Linked_In_AM.setObjectName("Linked_In_AM")
@@ -800,7 +870,7 @@ class Ui_HomeWindow(object):
         self.verticalLayout_14 = QtWidgets.QVBoxLayout(self.frame_28)
         self.verticalLayout_14.setObjectName("verticalLayout_14")
         self.label_18 = QtWidgets.QLabel(self.frame_28)
-        self.label_18.setMinimumSize(QtCore.QSize(0, 300))
+        self.label_18.setMinimumSize(QtCore.QSize(438, 438))
         self.label_18.setStyleSheet("image: url(:/images/images.png);\n"
 "border-bottom-left-radius:60px;\n"
 "border-bottom-right-radius:60px;\n"
@@ -827,8 +897,7 @@ class Ui_HomeWindow(object):
         self.Linked_IN_AB = QtWidgets.QPushButton(self.frame_29)
         self.Linked_IN_AB.setMinimumSize(QtCore.QSize(60, 60))
         self.Linked_IN_AB.setMaximumSize(QtCore.QSize(60, 16777215))
-        self.Linked_IN_AB.setStyleSheet("\n"
-"image: url(:/icons/media/LinkedIn-Symbole.png);\n"
+        self.Linked_IN_AB.setStyleSheet("image: url(:/icons/media/LinkedIn-Symbole.png);\n"
 "border-radius:30px;")
         self.Linked_IN_AB.setText("")
         self.Linked_IN_AB.setObjectName("Linked_IN_AB")
@@ -975,7 +1044,7 @@ class Ui_HomeWindow(object):
         self.horizontalLayout_15.addWidget(self.Insta_Devhack)
         self.verticalLayout_17.addWidget(self.frame_34)
         self.horizontalLayout_14.addWidget(self.frame_33, 0, QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
-        self.verticalLayout_5.addWidget(self.frame_15)
+        self.verticalLayout_5.addWidget(self.frame_15, 0, QtCore.Qt.AlignBottom)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.verticalLayout.addWidget(self.scrollArea)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -986,7 +1055,6 @@ class Ui_HomeWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.User_Icon.setText(_translate("MainWindow", "PushButton"))
         self.DEVHACK.setText(_translate("MainWindow", "DEVHACK"))
         # self.Hello__User_Name.setText(_translate("MainWindow", "HELLO AMBRISH"))
         self.Home_button.setText(_translate("MainWindow", "HOME"))
@@ -996,11 +1064,14 @@ class Ui_HomeWindow(object):
         self.About_button.setText(_translate("MainWindow", "ABOUT"))
         self.Upcoming_hackathons.setText(_translate("MainWindow", "UPCOMING HACKATHONS"))
         self.See_All_1.setText(_translate("MainWindow", "See All -->"))
-        self.pushButton.setText(_translate("MainWindow", "Smart Hackathon"))
-        self.pushButton_2.setText(_translate("MainWindow", "Smart Hackathon"))
-        self.pushButton_3.setText(_translate("MainWindow", "Smart Hackathon"))
+        self.Hack_1_pb.setText(_translate("MainWindow", "Smart Hackathon"))
+        self.Hack_2_pb.setText(_translate("MainWindow", "Smart Hackathon"))
+        self.Hack_3_pb.setText(_translate("MainWindow", "Smart Hackathon"))
         self.Internships.setText(_translate("MainWindow", "INTERNSHIPS"))
         self.See_All_2.setText(_translate("MainWindow", "See All -->"))
+        self.Intern_1_pb.setText(_translate("MainWindow", "Internship_1"))
+        self.Intern_2_pb.setText(_translate("MainWindow", "Internship_2"))
+        self.Intern_3_pb.setText(_translate("MainWindow", "Internship_3"))
         self.Devhack_info_header.setText(_translate("MainWindow", "DEVHACK MISSION IS TO INSPIRE DEVELOPERS\n"
 "TO BUILD GREAT SOFTWARE."))
         self.Devhack_info.setText(_translate("MainWindow", " Devhack is a platform that provides best portal to gather\n"
@@ -1010,15 +1081,12 @@ class Ui_HomeWindow(object):
 " from hackathons, Devhack will also provide information\n"
 " about the various internships."))
         self.Read_more_button.setText(_translate("MainWindow", "Read more"))
-        self.H_button.setText(_translate("MainWindow", "PushButton"))
         self.label_7.setText(_translate("MainWindow", "HACKATHONS"))
         self.label_8.setText(_translate("MainWindow", "Join and create your own\n"
 "hackathons"))
-        self.I_button.setText(_translate("MainWindow", "PushButton"))
         self.label_9.setText(_translate("MainWindow", "INTERNSHIPS"))
         self.label_10.setText(_translate("MainWindow", "Do Internships and build your\n"
 "resume"))
-        self.C_button.setText(_translate("MainWindow", "PushButton"))
         self.label_11.setText(_translate("MainWindow", "CONTESTS"))
         self.label_12.setText(_translate("MainWindow", "Participate in various contests."))
         self.label_13.setText(_translate("MainWindow", "MEET OUR TEAM"))
