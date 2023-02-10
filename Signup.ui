@@ -20,7 +20,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(180, 100, 206);</string>
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0.0568182, stop:0.204545 rgba(180, 100, 206, 255), stop:1 rgba(94, 53, 108, 255));</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -33,7 +33,7 @@
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(180, 100, 206);</string>
+       <string notr="true">background:transparent;</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -62,22 +62,54 @@ Internships &amp; Many More</string>
        </item>
        <item>
         <widget class="QFrame" name="frame_8">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>600</height>
+          </size>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QFrame" name="frame_9">
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="frame_10">
+            <property name="minimumSize">
+             <size>
+              <width>300</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-image: url(:/images/media/sign_up_2.jpg);</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
       </layout>
@@ -521,7 +553,7 @@ QPushButton:pressed{
             </property>
            </widget>
           </item>
-          <item alignment="Qt::AlignVCenter">
+          <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
            <widget class="QFrame" name="frame_7">
             <property name="minimumSize">
              <size>
