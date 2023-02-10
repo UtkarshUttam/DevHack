@@ -7,7 +7,7 @@ import mysql.connector as mc
 import sys
 import Homepage
 import Internship
-
+from xl_sql import img
 class Ui_HackWindow(object):
     def link(self, linkStr):
         QDesktopServices.openUrl(QUrl(linkStr))
@@ -404,7 +404,8 @@ class Ui_HackWindow(object):
                 self.horizontalLayout_3.addWidget(self.frame_12)
                 self.pushButton = QtWidgets.QPushButton(self.frame_8)
                 self.pushButton.setMinimumSize(QtCore.QSize(0, 170))
-                # self.pushButton.setStyleSheet(self.name_of_hack[0])
+                x=img()
+                self.pushButton.setStyleSheet("image: url('{0}')".format(str(x[i])))
                 self.pushButton.setText("")
                 self.pushButton.setObjectName("pushButton")
                 self.horizontalLayout_3.addWidget(self.pushButton)
