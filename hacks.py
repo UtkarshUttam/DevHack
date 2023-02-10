@@ -26,7 +26,7 @@ class Ui_HackWindow(object):
         self.email = email
         self.password = password
         Mmainwindow.setObjectName("Mmainwindow")
-        Mmainwindow.resize(1250, 1070)
+        Mmainwindow.resize(1920, 1080)
         Mmainwindow.setStyleSheet("background-color: rgb(229, 184, 244);")
         self.centralwidget = QtWidgets.QWidget(Mmainwindow)
         self.centralwidget.setMinimumSize(QtCore.QSize(1250, 800))
@@ -73,19 +73,11 @@ class Ui_HackWindow(object):
         self.Hello__User_Name.setFont(font)
         self.Hello__User_Name.setStyleSheet("color: rgb(129, 12, 168);")
         self.Hello__User_Name.setObjectName("Hello__User_Name")
-        mydb = mc.connect(host="localhost", user="root", password="root", database="devhack")
-        mycursor = mydb.cursor()
-        mycursor.execute("SELECT name FROM user_reg_data WHERE email='{0}' and password='{1}'".format(self.email,self.password))
-        self.user_name = (mycursor.fetchone())
-        self.user_name = ''.join(self.user_name)     
-        # print(self.user_name)  
-        self.Hello__User_Name.setText("Hello " + self.user_name)
         self.verticalLayout_4.addWidget(self.Hello__User_Name, 0, QtCore.Qt.AlignTop)
         self.horizontalLayout.addWidget(self.frame_3)
         spacerItem = QtWidgets.QSpacerItem(107, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
-        self.Home_button = QtWidgets.QPushButton(self.frame, clicked = lambda: self.HomeCall(self.email,self.password))
-        self.Home_button.clicked.connect(Mmainwindow.close)
+        self.Home_button = QtWidgets.QPushButton(self.frame)
         self.Home_button.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
         font.setFamily("Kokila")
@@ -135,33 +127,32 @@ class Ui_HackWindow(object):
 "}")
         self.Hackathons_button.setObjectName("Hackathons_button")
         self.horizontalLayout.addWidget(self.Hackathons_button)
-        # self.Organize_button = QtWidgets.QPushButton(self.frame)
-        # self.Organize_button.setMinimumSize(QtCore.QSize(0, 50))
-#         font = QtGui.QFont()
-#         font.setFamily("Kokila")
-#         font.setPointSize(20)
-#         font.setBold(False)
-#         self.Organize_button.setFont(font)
-#         self.Organize_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-#         self.Organize_button.setStyleSheet("QPushButton{\n"
-# "background-color: rgb(45, 3, 59);\n"
-# "color: rgb(229, 184, 244);\n"
-# "border-radius:10px;\n"
-# "}\n"
-# "\n"
-# "QPushButton:hover{    \n"
-# "    background-color: rgb(182, 12, 238);\n"
-# "    color: rgb(45, 3, 59);\n"
-# "}\n"
-# "\n"
-# "QPushButton:pressed{    \n"
-# "    background-color: rgb(67, 53, 71);    \n"
-# "    color: rgb(229, 184, 244);\n"
-# "}")
-#         self.Organize_button.setObjectName("Organize_button")
-#         self.horizontalLayout.addWidget(self.Organize_button)
-        self.Internships_button = QtWidgets.QPushButton(self.frame , clicked = lambda: self.InternCall(self.email,self.password))
-        self.Internships_button.clicked.connect(Mmainwindow.close)
+        self.Organize_button = QtWidgets.QPushButton(self.frame)
+        self.Organize_button.setMinimumSize(QtCore.QSize(0, 50))
+        font = QtGui.QFont()
+        font.setFamily("Kokila")
+        font.setPointSize(20)
+        font.setBold(False)
+        self.Organize_button.setFont(font)
+        self.Organize_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Organize_button.setStyleSheet("QPushButton{\n"
+"background-color: rgb(45, 3, 59);\n"
+"color: rgb(229, 184, 244);\n"
+"border-radius:10px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{    \n"
+"    background-color: rgb(182, 12, 238);\n"
+"    color: rgb(45, 3, 59);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{    \n"
+"    background-color: rgb(67, 53, 71);    \n"
+"    color: rgb(229, 184, 244);\n"
+"}")
+        self.Organize_button.setObjectName("Organize_button")
+        self.horizontalLayout.addWidget(self.Organize_button)
+        self.Internships_button = QtWidgets.QPushButton(self.frame)
         self.Internships_button.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
         font.setFamily("Kokila")
@@ -239,72 +230,26 @@ class Ui_HackWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, -64, 1231, 1430))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, -270, 1901, 1730))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
-        self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.frame_2 = QtWidgets.QFrame(self.scrollAreaWidgetContents)
-        self.frame_2.setMinimumSize(QtCore.QSize(0, 200))
-        self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_2.setObjectName("frame_2")
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.frame_2)
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.poster_area = QtWidgets.QFrame(self.frame_2)
-        self.poster_area.setMinimumSize(QtCore.QSize(0, 200))
-        self.poster_area.setMaximumSize(QtCore.QSize(16777215, 250))
-        self.poster_area.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"")
+        self.poster_area = QtWidgets.QFrame(self.scrollAreaWidgetContents)
+        self.poster_area.setEnabled(True)
+        self.poster_area.setMinimumSize(QtCore.QSize(0, 500))
+        self.poster_area.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.poster_area.setStyleSheet("background-image: url(:/images/media/MISSION UNICORN BANNER.png);")
         self.poster_area.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.poster_area.setFrameShadow(QtWidgets.QFrame.Raised)
         self.poster_area.setObjectName("poster_area")
         self.verticalLayout_2.addWidget(self.poster_area)
-        self.verticalLayout_3.addWidget(self.frame_2)
         self.frame_4 = QtWidgets.QFrame(self.scrollAreaWidgetContents)
         self.frame_4.setMinimumSize(QtCore.QSize(0, 800))
         self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_4.setObjectName("frame_4")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.frame_4)
-        # self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        # self.frame_5 = QtWidgets.QFrame(self.frame_4)
-        # self.frame_5.setMinimumSize(QtCore.QSize(250, 0))
-        # self.frame_5.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        # self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
-        # self.frame_5.setObjectName("frame_5")
-        # self.verticalLayout_13 = QtWidgets.QVBoxLayout(self.frame_5)
-        # self.verticalLayout_13.setObjectName("verticalLayout_13")
-        # self.label_21 = QtWidgets.QLabel(self.frame_5)
-        # self.label_21.setObjectName("label_21")
-        # self.verticalLayout_13.addWidget(self.label_21)
-        # self.comboBox = QtWidgets.QComboBox(self.frame_5)
-        # self.comboBox.setEnabled(True)
-        # self.comboBox.setMinimumSize(QtCore.QSize(0, 100))
-        # self.comboBox.setFocusPolicy(QtCore.Qt.WheelFocus)
-        # self.comboBox.setFrame(False)
-        # self.comboBox.setObjectName("comboBox")
-        # self.comboBox.addItem("")
-        # self.comboBox.addItem("")
-        # self.comboBox.addItem("")
-        # self.verticalLayout_13.addWidget(self.comboBox)
-        # self.comboBox_2 = QtWidgets.QComboBox(self.frame_5)
-        # self.comboBox_2.setMinimumSize(QtCore.QSize(0, 100))
-        # self.comboBox_2.setFrame(False)
-        # self.comboBox_2.setObjectName("comboBox_2")
-        # self.verticalLayout_13.addWidget(self.comboBox_2)
-        # self.comboBox_3 = QtWidgets.QComboBox(self.frame_5)
-        # self.comboBox_3.setMinimumSize(QtCore.QSize(0, 100))
-        # self.comboBox_3.setFrame(False)
-        # self.comboBox_3.setObjectName("comboBox_3")
-        # self.verticalLayout_13.addWidget(self.comboBox_3)
-        # self.comboBox_4 = QtWidgets.QComboBox(self.frame_5)
-        # self.comboBox_4.setMinimumSize(QtCore.QSize(0, 100))
-        # self.comboBox_4.setFrame(False)
-        # self.comboBox_4.setObjectName("comboBox_4")
-        # # self.verticalLayout_13.addWidget(self.comboBox_4)
-        # spacerItem1 = QtWidgets.QSpacerItem(20, 311, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        # self.verticalLayout_13.addItem(spacerItem1)
-        # self.horizontalLayout_2.addWidget(self.frame_5)
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.scrollArea_2 = QtWidgets.QScrollArea(self.frame_4)
         self.scrollArea_2.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.scrollArea_2.setFrameShadow(QtWidgets.QFrame.Plain)
@@ -312,7 +257,7 @@ class Ui_HackWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollArea_2.setObjectName("scrollArea_2")
         self.scrollAreaWidgetContents_2 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 937, 780))
+        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 1863, 780))
         self.scrollAreaWidgetContents_2.setObjectName("scrollAreaWidgetContents_2")
         self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
@@ -381,9 +326,10 @@ class Ui_HackWindow(object):
                 self.label_5.setText('<a href="'+self.name_of_hack[5]+'">'+self.name_of_hack[5]+'</a>')
                 self.label_5.setStyleSheet("QLabel{\n"
 "color: rgb(45, 3, 59);\n"
+"text-align:center;\n"
 "}\n"
-"QLabel:hover{\n"
-"color: rgb(255, 0, 0);\n"
+"QLabel:hover{    \n"
+"    color: rgb(255, 0, 0);\n"
 "}")
                 self.label_5.setObjectName("label_5")
                 self.verticalLayout_6.addWidget(self.label_5)
@@ -405,8 +351,7 @@ class Ui_HackWindow(object):
                 self.pushButton = QtWidgets.QPushButton(self.frame_8)
                 self.pushButton.setMinimumSize(QtCore.QSize(0, 170))
                 # x=img()
-                # self.pushButton.setStyleSheet("image: url('{0}')".format(str(x[i])))
-                self.pushButton.setStyleSheet("image: url('%s');"%self.name_of_hack[6])
+                self.pushButton.setStyleSheet("image: url('%s')"%self.name_of_hack[6])
                 self.pushButton.setText("")
                 self.pushButton.setObjectName("pushButton")
                 self.horizontalLayout_3.addWidget(self.pushButton)
@@ -414,7 +359,7 @@ class Ui_HackWindow(object):
                 self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
                 self.horizontalLayout_2.addWidget(self.scrollArea_2)
                 
-        self.verticalLayout_3.addWidget(self.frame_4)
+        self.verticalLayout_2.addWidget(self.frame_4)
         self.frame_15 = QtWidgets.QFrame(self.scrollAreaWidgetContents)
         self.frame_15.setMinimumSize(QtCore.QSize(1200, 400))
         self.frame_15.setStyleSheet("background-color: rgb(45, 3, 59);\n"
@@ -537,7 +482,7 @@ class Ui_HackWindow(object):
         self.horizontalLayout_15.addWidget(self.Insta_Devhack)
         self.verticalLayout_17.addWidget(self.frame_34)
         self.horizontalLayout_14.addWidget(self.frame_33, 0, QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
-        self.verticalLayout_3.addWidget(self.frame_15)
+        self.verticalLayout_2.addWidget(self.frame_15)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.verticalLayout.addWidget(self.scrollArea)
         Mmainwindow.setCentralWidget(self.centralwidget)
@@ -553,7 +498,7 @@ class Ui_HackWindow(object):
         # self.Hello__User_Name.setText(_translate("Mmainwindow", "HELLO AMBRISH"))
         self.Home_button.setText(_translate("Mmainwindow", "HOME"))
         self.Hackathons_button.setText(_translate("Mmainwindow", "  HACKATHONS  "))
-        # self.Organize_button.setText(_translate("Mmainwindow", "  ORGANIZE  "))
+        self.Organize_button.setText(_translate("Mmainwindow", "  ORGANIZE  "))
         self.Internships_button.setText(_translate("Mmainwindow", "  INTERNSHIPS  "))
         self.About_button.setText(_translate("Mmainwindow", "ABOUT"))
         # self.label_21.setText(_translate("Mmainwindow", "Filters"))
