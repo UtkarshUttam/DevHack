@@ -7,7 +7,7 @@ import mysql.connector as mc
 import sys
 import Homepage
 import Internship
-from xl_sql import img
+# from xl_sql import img
 class Ui_HackWindow(object):
     def link(self, linkStr):
         QDesktopServices.openUrl(QUrl(linkStr))
@@ -135,31 +135,31 @@ class Ui_HackWindow(object):
 "}")
         self.Hackathons_button.setObjectName("Hackathons_button")
         self.horizontalLayout.addWidget(self.Hackathons_button)
-        self.Organize_button = QtWidgets.QPushButton(self.frame)
-        self.Organize_button.setMinimumSize(QtCore.QSize(0, 50))
-        font = QtGui.QFont()
-        font.setFamily("Kokila")
-        font.setPointSize(20)
-        font.setBold(False)
-        self.Organize_button.setFont(font)
-        self.Organize_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.Organize_button.setStyleSheet("QPushButton{\n"
-"background-color: rgb(45, 3, 59);\n"
-"color: rgb(229, 184, 244);\n"
-"border-radius:10px;\n"
-"}\n"
-"\n"
-"QPushButton:hover{    \n"
-"    background-color: rgb(182, 12, 238);\n"
-"    color: rgb(45, 3, 59);\n"
-"}\n"
-"\n"
-"QPushButton:pressed{    \n"
-"    background-color: rgb(67, 53, 71);    \n"
-"    color: rgb(229, 184, 244);\n"
-"}")
-        self.Organize_button.setObjectName("Organize_button")
-        self.horizontalLayout.addWidget(self.Organize_button)
+        # self.Organize_button = QtWidgets.QPushButton(self.frame)
+        # self.Organize_button.setMinimumSize(QtCore.QSize(0, 50))
+#         font = QtGui.QFont()
+#         font.setFamily("Kokila")
+#         font.setPointSize(20)
+#         font.setBold(False)
+#         self.Organize_button.setFont(font)
+#         self.Organize_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+#         self.Organize_button.setStyleSheet("QPushButton{\n"
+# "background-color: rgb(45, 3, 59);\n"
+# "color: rgb(229, 184, 244);\n"
+# "border-radius:10px;\n"
+# "}\n"
+# "\n"
+# "QPushButton:hover{    \n"
+# "    background-color: rgb(182, 12, 238);\n"
+# "    color: rgb(45, 3, 59);\n"
+# "}\n"
+# "\n"
+# "QPushButton:pressed{    \n"
+# "    background-color: rgb(67, 53, 71);    \n"
+# "    color: rgb(229, 184, 244);\n"
+# "}")
+#         self.Organize_button.setObjectName("Organize_button")
+#         self.horizontalLayout.addWidget(self.Organize_button)
         self.Internships_button = QtWidgets.QPushButton(self.frame , clicked = lambda: self.InternCall(self.email,self.password))
         self.Internships_button.clicked.connect(Mmainwindow.close)
         self.Internships_button.setMinimumSize(QtCore.QSize(0, 50))
@@ -404,8 +404,9 @@ class Ui_HackWindow(object):
                 self.horizontalLayout_3.addWidget(self.frame_12)
                 self.pushButton = QtWidgets.QPushButton(self.frame_8)
                 self.pushButton.setMinimumSize(QtCore.QSize(0, 170))
-                x=img()
-                self.pushButton.setStyleSheet("image: url('{0}')".format(str(x[i])))
+                # x=img()
+                # self.pushButton.setStyleSheet("image: url('{0}')".format(str(x[i])))
+                self.pushButton.setStyleSheet("image: url('%s');"%self.name_of_hack[6])
                 self.pushButton.setText("")
                 self.pushButton.setObjectName("pushButton")
                 self.horizontalLayout_3.addWidget(self.pushButton)
@@ -552,7 +553,7 @@ class Ui_HackWindow(object):
         # self.Hello__User_Name.setText(_translate("Mmainwindow", "HELLO AMBRISH"))
         self.Home_button.setText(_translate("Mmainwindow", "HOME"))
         self.Hackathons_button.setText(_translate("Mmainwindow", "  HACKATHONS  "))
-        self.Organize_button.setText(_translate("Mmainwindow", "  ORGANIZE  "))
+        # self.Organize_button.setText(_translate("Mmainwindow", "  ORGANIZE  "))
         self.Internships_button.setText(_translate("Mmainwindow", "  INTERNSHIPS  "))
         self.About_button.setText(_translate("Mmainwindow", "ABOUT"))
         # self.label_21.setText(_translate("Mmainwindow", "Filters"))
