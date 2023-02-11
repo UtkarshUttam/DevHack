@@ -421,7 +421,7 @@ QPushButton:pressed{
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>-873</y>
+         <y>-1533</y>
          <width>1901</width>
          <height>3036</height>
         </rect>
@@ -1635,7 +1635,7 @@ border-radius: 15px;</string>
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">image: url(:/images/images.png);
+                    <string notr="true">background-image: url(:/images/media/Ambrish.png);
 border-bottom-left-radius:60px;
 border-bottom-right-radius:60px;
 background-color: rgb(255, 255, 255);</string>
@@ -1779,7 +1779,7 @@ border-radius: 15px;</string>
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">image: url(:/images/images.png);
+                    <string notr="true">background-image: url(:/images/media/Abhishek.png);
 border-bottom-left-radius:60px;
 border-bottom-right-radius:60px;
 background-color: rgb(255, 255, 255);</string>
