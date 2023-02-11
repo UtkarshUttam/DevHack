@@ -3,6 +3,7 @@ import hacks
 from Internship import Ui_InternshipWindow
 import mysql.connector as mc
 import media
+import webbrowser
 
 class Ui_HomeWindow(object):
     def HackCall(self,email,password):
@@ -15,6 +16,16 @@ class Ui_HomeWindow(object):
         self.ui = Ui_InternshipWindow()
         self.ui.setupUi(self.window,email,password)
         self.window.show()
+    def insta_call(self,name):
+        if name == 'Utkarsh':
+                self.url= 'https://www.instagram.com/utkarshuttam_3/'
+        elif name == 'Om':
+                self.url = 'https://www.instagram.com/paithankarom/'
+        elif name == 'Ambrish':
+                self.url = 'https://www.instagram.com/ambrishk.rai/'
+        elif name == 'Abhishek':
+                self.url = 'https://www.instagram.com/e_m_p_t_y.y/'
+        webbrowser.open_new_tab(self.url)
     def setupUi(self, MainWindow,email,password):
         self.email = email
         self.password = password
@@ -743,7 +754,7 @@ class Ui_HomeWindow(object):
         self.Linked_In_U.setText("")
         self.Linked_In_U.setObjectName("Linked_In_U")
         self.horizontalLayout_9.addWidget(self.Linked_In_U)
-        self.Insta_U = QtWidgets.QPushButton(self.frame_25)
+        self.Insta_U = QtWidgets.QPushButton(self.frame_25, clicked= lambda: self.insta_call('Utkarsh'))
         self.Insta_U.setMinimumSize(QtCore.QSize(60, 60))
         self.Insta_U.setMaximumSize(QtCore.QSize(60, 16777215))
         self.Insta_U.setStyleSheet("image: url(:/icons/media/insta.png);\n"
@@ -802,7 +813,7 @@ class Ui_HomeWindow(object):
         self.Linked_In_O.setText("")
         self.Linked_In_O.setObjectName("Linked_In_O")
         self.horizontalLayout_10.addWidget(self.Linked_In_O)
-        self.Insta_O = QtWidgets.QPushButton(self.frame_27)
+        self.Insta_O = QtWidgets.QPushButton(self.frame_27, clicked= lambda: self.insta_call('Om'))
         self.Insta_O.setMinimumSize(QtCore.QSize(60, 60))
         self.Insta_O.setMaximumSize(QtCore.QSize(60, 16777215))
         self.Insta_O.setStyleSheet("image: url(:/icons/media/insta.png);\n"
@@ -861,7 +872,7 @@ class Ui_HomeWindow(object):
         self.Linked_In_AM.setText("")
         self.Linked_In_AM.setObjectName("Linked_In_AM")
         self.horizontalLayout_12.addWidget(self.Linked_In_AM)
-        self.Insta_AM = QtWidgets.QPushButton(self.frame_31)
+        self.Insta_AM = QtWidgets.QPushButton(self.frame_31, clicked= lambda: self.insta_call('Ambrish'))
         self.Insta_AM.setMinimumSize(QtCore.QSize(60, 60))
         self.Insta_AM.setMaximumSize(QtCore.QSize(60, 16777215))
         self.Insta_AM.setStyleSheet("image: url(:/icons/media/insta.png);\n"
@@ -920,7 +931,7 @@ class Ui_HomeWindow(object):
         self.Linked_IN_AB.setText("")
         self.Linked_IN_AB.setObjectName("Linked_IN_AB")
         self.horizontalLayout_11.addWidget(self.Linked_IN_AB)
-        self.Insta_AB = QtWidgets.QPushButton(self.frame_29)
+        self.Insta_AB = QtWidgets.QPushButton(self.frame_29, clicked= lambda: self.insta_call('Abhishek'))
         self.Insta_AB.setMinimumSize(QtCore.QSize(60, 60))
         self.Insta_AB.setMaximumSize(QtCore.QSize(60, 16777215))
         self.Insta_AB.setStyleSheet("image: url(:/icons/media/insta.png);\n"
