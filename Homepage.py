@@ -26,6 +26,26 @@ class Ui_HomeWindow(object):
         elif name == 'Abhishek':
                 self.url = 'https://www.instagram.com/e_m_p_t_y.y/'
         webbrowser.open_new_tab(self.url)
+    def linkedin_call(self,name):
+        if name == 'Utkarsh':
+                self.url= 'https://www.linkedin.com/in/utkarsh-uttam-0884ab1b7/'
+        elif name == 'Om':
+                self.url = 'https://www.linkedin.com/in/om-paithankar-8180a122a/'
+        elif name == 'Ambrish':
+                self.url = 'https://www.linkedin.com/in/ambrish-kumar-rai-aa257122b/'
+        elif name == 'Abhishek':
+                self.url = 'https://www.linkedin.com/in/abhishek-m-973046243/'
+        webbrowser.open_new_tab(self.url)
+    def github_call(self,name):
+        if name == 'Utkarsh':
+                self.url= 'https://github.com/UtkarshUttam'
+        elif name == 'Om':
+                self.url = 'https://github.com/am-i-op'
+        elif name == 'Ambrish':
+                self.url = 'https://github.com/AmbrishKumarRai'
+        elif name == 'Abhishek':
+                self.url = 'https://github.com/EMPTY2126'
+        webbrowser.open_new_tab(self.url)
     def setupUi(self, MainWindow,email,password):
         self.email = email
         self.password = password
@@ -745,9 +765,10 @@ class Ui_HomeWindow(object):
         self.frame_25.setObjectName("frame_25")
         self.horizontalLayout_9 = QtWidgets.QHBoxLayout(self.frame_25)
         self.horizontalLayout_9.setObjectName("horizontalLayout_9")
-        self.Linked_In_U = QtWidgets.QPushButton(self.frame_25)
+        self.Linked_In_U = QtWidgets.QPushButton(self.frame_25, clicked= lambda: self.linkedin_call('Utkarsh'))
         self.Linked_In_U.setMinimumSize(QtCore.QSize(60, 60))
         self.Linked_In_U.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.Linked_In_U.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.Linked_In_U.setStyleSheet("\n"
 "image: url(:/icons/media/LinkedIn-Symbole.png);\n"
 "border-radius:30px;")
@@ -757,14 +778,16 @@ class Ui_HomeWindow(object):
         self.Insta_U = QtWidgets.QPushButton(self.frame_25, clicked= lambda: self.insta_call('Utkarsh'))
         self.Insta_U.setMinimumSize(QtCore.QSize(60, 60))
         self.Insta_U.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.Insta_U.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.Insta_U.setStyleSheet("image: url(:/icons/media/insta.png);\n"
 "border-radius:30px;")
         self.Insta_U.setText("")
         self.Insta_U.setObjectName("Insta_U")
         self.horizontalLayout_9.addWidget(self.Insta_U)
-        self.GitHub_U = QtWidgets.QPushButton(self.frame_25)
+        self.GitHub_U = QtWidgets.QPushButton(self.frame_25, clicked= lambda: self.github_call('Utkarsh'))
         self.GitHub_U.setMinimumSize(QtCore.QSize(60, 60))
         self.GitHub_U.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.GitHub_U.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.GitHub_U.setStyleSheet("image: url(:/icons/media/github-logo.png);\n"
 "border-radius:30px;")
         self.GitHub_U.setText("")
@@ -805,9 +828,10 @@ class Ui_HomeWindow(object):
         self.frame_27.setObjectName("frame_27")
         self.horizontalLayout_10 = QtWidgets.QHBoxLayout(self.frame_27)
         self.horizontalLayout_10.setObjectName("horizontalLayout_10")
-        self.Linked_In_O = QtWidgets.QPushButton(self.frame_27)
+        self.Linked_In_O = QtWidgets.QPushButton(self.frame_27, clicked= lambda: self.linkedin_call('Om'))
         self.Linked_In_O.setMinimumSize(QtCore.QSize(60, 60))
         self.Linked_In_O.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.Linked_In_O.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.Linked_In_O.setStyleSheet("image: url(:/icons/media/LinkedIn-Symbole.png);\n"
 "border-radius:30px;")
         self.Linked_In_O.setText("")
@@ -816,14 +840,16 @@ class Ui_HomeWindow(object):
         self.Insta_O = QtWidgets.QPushButton(self.frame_27, clicked= lambda: self.insta_call('Om'))
         self.Insta_O.setMinimumSize(QtCore.QSize(60, 60))
         self.Insta_O.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.Insta_O.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.Insta_O.setStyleSheet("image: url(:/icons/media/insta.png);\n"
 "border-radius:30px;")
         self.Insta_O.setText("")
         self.Insta_O.setObjectName("Insta_O")
         self.horizontalLayout_10.addWidget(self.Insta_O)
-        self.GitHub_O = QtWidgets.QPushButton(self.frame_27)
+        self.GitHub_O = QtWidgets.QPushButton(self.frame_27 ,clicked= lambda: self.github_call('Om'))
         self.GitHub_O.setMinimumSize(QtCore.QSize(60, 60))
         self.GitHub_O.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.GitHub_O.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.GitHub_O.setStyleSheet("image: url(:/icons/media/github-logo.png);\n"
 "border-radius:30px;")
         self.GitHub_O.setText("")
@@ -864,9 +890,10 @@ class Ui_HomeWindow(object):
         self.frame_31.setObjectName("frame_31")
         self.horizontalLayout_12 = QtWidgets.QHBoxLayout(self.frame_31)
         self.horizontalLayout_12.setObjectName("horizontalLayout_12")
-        self.Linked_In_AM = QtWidgets.QPushButton(self.frame_31)
+        self.Linked_In_AM = QtWidgets.QPushButton(self.frame_31, clicked= lambda: self.linkedin_call('Ambrish'))
         self.Linked_In_AM.setMinimumSize(QtCore.QSize(60, 60))
         self.Linked_In_AM.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.Linked_In_AM.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.Linked_In_AM.setStyleSheet("image: url(:/icons/media/LinkedIn-Symbole.png);\n"
 "border-radius:30px;")
         self.Linked_In_AM.setText("")
@@ -875,14 +902,16 @@ class Ui_HomeWindow(object):
         self.Insta_AM = QtWidgets.QPushButton(self.frame_31, clicked= lambda: self.insta_call('Ambrish'))
         self.Insta_AM.setMinimumSize(QtCore.QSize(60, 60))
         self.Insta_AM.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.Insta_AM.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.Insta_AM.setStyleSheet("image: url(:/icons/media/insta.png);\n"
 "border-radius:30px;")
         self.Insta_AM.setText("")
         self.Insta_AM.setObjectName("Insta_AM")
         self.horizontalLayout_12.addWidget(self.Insta_AM)
-        self.GitHub_AM = QtWidgets.QPushButton(self.frame_31)
+        self.GitHub_AM = QtWidgets.QPushButton(self.frame_31, clicked= lambda: self.github_call('Ambrish'))
         self.GitHub_AM.setMinimumSize(QtCore.QSize(60, 60))
         self.GitHub_AM.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.GitHub_AM.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.GitHub_AM.setStyleSheet("image: url(:/icons/media/github-logo.png);\n"
 "border-radius:30px;")
         self.GitHub_AM.setText("")
@@ -923,9 +952,10 @@ class Ui_HomeWindow(object):
         self.frame_29.setObjectName("frame_29")
         self.horizontalLayout_11 = QtWidgets.QHBoxLayout(self.frame_29)
         self.horizontalLayout_11.setObjectName("horizontalLayout_11")
-        self.Linked_IN_AB = QtWidgets.QPushButton(self.frame_29)
+        self.Linked_IN_AB = QtWidgets.QPushButton(self.frame_29, clicked= lambda: self.linkedin_call('Abhishek'))
         self.Linked_IN_AB.setMinimumSize(QtCore.QSize(60, 60))
         self.Linked_IN_AB.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.Linked_IN_AB.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.Linked_IN_AB.setStyleSheet("image: url(:/icons/media/LinkedIn-Symbole.png);\n"
 "border-radius:30px;")
         self.Linked_IN_AB.setText("")
@@ -934,14 +964,16 @@ class Ui_HomeWindow(object):
         self.Insta_AB = QtWidgets.QPushButton(self.frame_29, clicked= lambda: self.insta_call('Abhishek'))
         self.Insta_AB.setMinimumSize(QtCore.QSize(60, 60))
         self.Insta_AB.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.Insta_AB.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.Insta_AB.setStyleSheet("image: url(:/icons/media/insta.png);\n"
 "border-radius:30px;")
         self.Insta_AB.setText("")
         self.Insta_AB.setObjectName("Insta_AB")
         self.horizontalLayout_11.addWidget(self.Insta_AB)
-        self.GitHub_AB = QtWidgets.QPushButton(self.frame_29)
+        self.GitHub_AB = QtWidgets.QPushButton(self.frame_29, clicked= lambda: self.github_call('Abhishek'))
         self.GitHub_AB.setMinimumSize(QtCore.QSize(60, 60))
         self.GitHub_AB.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.GitHub_AB.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.GitHub_AB.setStyleSheet("image: url(:/icons/media/github-logo.png);\n"
 "border-radius:30px;")
         self.GitHub_AB.setText("")
