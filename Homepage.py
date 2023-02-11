@@ -79,7 +79,7 @@ class Ui_HomeWindow(object):
         self.horizontalLayout.addWidget(self.frame_3, 0, QtCore.Qt.AlignVCenter)
         spacerItem = QtWidgets.QSpacerItem(107, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
-        self.Home_button = QtWidgets.QPushButton(self.frame,)
+        self.Home_button = QtWidgets.QPushButton(self.frame)
         self.Home_button.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
         font.setFamily("Kokila")
@@ -234,7 +234,7 @@ class Ui_HomeWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, -2078, 1901, 3036))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, -1533, 1901, 3036))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
@@ -830,7 +830,7 @@ class Ui_HomeWindow(object):
         self.verticalLayout_15.setObjectName("verticalLayout_15")
         self.label_20 = QtWidgets.QLabel(self.frame_30)
         self.label_20.setMinimumSize(QtCore.QSize(438, 438))
-        self.label_20.setStyleSheet("image: url(:/images/images.png);\n"
+        self.label_20.setStyleSheet("background-image: url(:/images/media/Ambrish.png);\n"
 "border-bottom-left-radius:60px;\n"
 "border-bottom-right-radius:60px;\n"
 "background-color: rgb(255, 255, 255);")
@@ -889,7 +889,7 @@ class Ui_HomeWindow(object):
         self.verticalLayout_14.setObjectName("verticalLayout_14")
         self.label_18 = QtWidgets.QLabel(self.frame_28)
         self.label_18.setMinimumSize(QtCore.QSize(438, 438))
-        self.label_18.setStyleSheet("image: url(:/images/images.png);\n"
+        self.label_18.setStyleSheet("background-image: url(:/images/media/Abhishek.png);\n"
 "border-bottom-left-radius:60px;\n"
 "border-bottom-right-radius:60px;\n"
 "background-color: rgb(255, 255, 255);")
