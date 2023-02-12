@@ -1,6 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import hacks
-from Internship import Ui_InternshipWindow
+import Internship
+import About
 import mysql.connector as mc
 import media
 import webbrowser
@@ -11,9 +12,14 @@ class Ui_HomeWindow(object):
         self.ui = hacks.Ui_HackWindow()
         self.ui.setupUi(self.window,email,password)
         self.window.show()
+    def AboutCall(self,email,password):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = About.Ui_AboutWindow()
+        self.ui.setupUi(self.window,email,password)
+        self.window.show()
     def InternCall(self,email,password):
         self.window = QtWidgets.QMainWindow()
-        self.ui = Ui_InternshipWindow()
+        self.ui = Internship.Ui_InternshipWindow()
         self.ui.setupUi(self.window,email,password)
         self.window.show()
     def insta_call(self,name):
@@ -212,7 +218,8 @@ class Ui_HomeWindow(object):
 "}")
         self.Internships_button.setObjectName("Internships_button")
         self.horizontalLayout.addWidget(self.Internships_button)
-        self.About_button = QtWidgets.QPushButton(self.frame)
+        self.About_button = QtWidgets.QPushButton(self.frame, clicked = lambda: self.AboutCall(self.email,self.password))
+        self.About_button.clicked.connect(MainWindow.close)
         self.About_button.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
         font.setFamily("Kokila")

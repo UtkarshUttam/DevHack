@@ -7,6 +7,7 @@ import mysql.connector as mc
 import sys
 import Homepage
 import Internship
+import About
 # from xl_sql import img
 class Ui_HackWindow(object):
     def link(self, linkStr):
@@ -15,6 +16,11 @@ class Ui_HackWindow(object):
     def HomeCall(self,email,password):
         self.window = QtWidgets.QMainWindow()
         self.ui = Homepage.Ui_HomeWindow()
+        self.ui.setupUi(self.window,email,password)
+        self.window.show()
+    def AboutCall(self,email,password):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = About.Ui_AboutWindow()
         self.ui.setupUi(self.window,email,password)
         self.window.show()
     def InternCall(self,email,password):
@@ -179,7 +185,8 @@ class Ui_HackWindow(object):
 "}")
         self.Internships_button.setObjectName("Internships_button")
         self.horizontalLayout.addWidget(self.Internships_button)
-        self.About_button = QtWidgets.QPushButton(self.frame)
+        self.About_button = QtWidgets.QPushButton(self.frame, clicked= lambda: self.AboutCall(self.email,self.password))
+        self.About_button.clicked.connect(Mmainwindow.close)
         self.About_button.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
         font.setFamily("Kokila")
