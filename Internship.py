@@ -18,7 +18,7 @@ class Ui_InternshipWindow(object):
         self.email = email
         self.password = password
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1250, 1070)
+        MainWindow.resize(1920, 1080)
         MainWindow.setStyleSheet("background-color: rgb(229, 184, 244);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setMinimumSize(QtCore.QSize(1250, 800))
