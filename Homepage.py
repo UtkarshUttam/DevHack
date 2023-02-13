@@ -461,6 +461,13 @@ class Ui_HomeWindow(object):
         font.setFamily("Leelawadee UI")
         font.setPointSize(26)
         font.setBold(True)
+        mycursor.execute("SELECT COUNT(Internship_id) FROM Internship_data;")
+        self.count_internships = mycursor.fetchone()
+        self.count_internships = int(self.count_internships[0])
+        mycursor.execute("SELECT name FROM Internship_data WHERE Internship_id = %s;"%self.count_internships)
+        self.name_of_internship1 = mycursor.fetchone()
+        self.count_internships = self.count_internships - 1
+        self.Intern_1_pb.setText(self.name_of_internship1[0])
         self.Intern_1_pb.setFont(font)
         self.Intern_1_pb.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.Intern_1_pb.setStyleSheet("QPushButton{\n"
@@ -480,6 +487,10 @@ class Ui_HomeWindow(object):
         font.setFamily("Leelawadee UI")
         font.setPointSize(26)
         font.setBold(True)
+        mycursor.execute("SELECT name FROM Internship_data WHERE Internship_id = %s;"%self.count_internships)
+        self.name_of_internship2 = mycursor.fetchone()
+        self.count_internships = self.count_internships - 1
+        self.Intern_2_pb.setText(self.name_of_internship2[0])
         self.Intern_2_pb.setFont(font)
         self.Intern_2_pb.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.Intern_2_pb.setStyleSheet("QPushButton{\n"
@@ -499,6 +510,9 @@ class Ui_HomeWindow(object):
         font.setFamily("Leelawadee UI")
         font.setPointSize(26)
         font.setBold(True)
+        mycursor.execute("SELECT name FROM Internship_data WHERE Internship_id = %s;"%self.count_internships)
+        self.name_of_internship3 = mycursor.fetchone()
+        self.Intern_3_pb.setText(self.name_of_internship3[0])
         self.Intern_3_pb.setFont(font)
         self.Intern_3_pb.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.Intern_3_pb.setStyleSheet("QPushButton{\n"
@@ -1135,11 +1149,11 @@ class Ui_HomeWindow(object):
         # self.Hack_1_pb.setText(_translate("MainWindow", "Smart Hackathon"))
         # self.Hack_2_pb.setText(_translate("MainWindow", "Smart Hackathon"))
         # self.Hack_3_pb.setText(_translate("MainWindow", "Smart Hackathon"))
-        self.Internships.setText(_translate("MainWindow", "INTERNSHIPS"))
+        self.Internships.setText(_translate("MainWindow", "LATEST INTERNSHIPS"))
         self.See_All_2.setText(_translate("MainWindow", "See All -->"))
-        self.Intern_1_pb.setText(_translate("MainWindow", "Internship_1"))
-        self.Intern_2_pb.setText(_translate("MainWindow", "Internship_2"))
-        self.Intern_3_pb.setText(_translate("MainWindow", "Internship_3"))
+        # self.Intern_1_pb.setText(_translate("MainWindow", "Internship_1"))
+        # self.Intern_2_pb.setText(_translate("MainWindow", "Internship_2"))
+        # self.Intern_3_pb.setText(_translate("MainWindow", "Internship_3"))
         self.Devhack_info_header.setText(_translate("MainWindow", "DEVHACK MISSION IS TO INSPIRE DEVELOPERS\n"
 "TO BUILD GREAT SOFTWARE."))
         self.Devhack_info.setText(_translate("MainWindow", " Devhack is a platform that provides best portal to gather\n"
