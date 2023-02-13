@@ -11,6 +11,17 @@ def scrap_inserter():
         cursor.execute('INSERT INTO  hackathons_data1 VALUES ("{0}","{1}","{2}","{3}","{4}","{5}","{6}");'.format(j[0], j[1], j[2], j[3], j[4],j[5],j[6]))
         mydb.commit()
     mydb.close()
+
+def scrap_inserter2():
+    mydb=mc.connect(host='localhost',user='root',password='root',database='devhack')
+    cursor=mydb.cursor()
+    cursor.execute('truncate internship_data;')
+    file1 = pd.read_excel('Internships_data.xlsx')
+    h2=file1
+    for i,j in h2.iterrows():
+        cursor.execute('INSERT INTO  Internship_data VALUES ("{0}","{1}","{2}","{3}","{4}","{5}");'.format(j[0], j[1], j[2], j[3], j[4],j[5]))
+        mydb.commit()
+    mydb.close()
     
 # def img():
 #     img_store=[]

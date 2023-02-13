@@ -6,7 +6,7 @@ import mysql.connector as mc
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Homepage import Ui_HomeWindow
 import media
-from xl_sql import scrap_inserter
+from xl_sql import scrap_inserter,scrap_inserter2
 import Signup
 
 
@@ -30,6 +30,7 @@ class Ui_LoginWindow(object):
             QMessageBox.about(self,"Invalid entry!","Please enter your password.")
         else:
             scrap_inserter()
+            scrap_inserter2()
             mydb = mc.connect(host="localhost", user="root", password="root", database="devhack")
             mycursor = mydb.cursor()
             mycursor.execute("SELECT password FROM user_reg_data WHERE email='%s'"%self.email)
