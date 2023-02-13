@@ -54,7 +54,9 @@ class Ui_InternshipWindow(object):
         self.User_Icon.setMinimumSize(QtCore.QSize(0, 100))
         self.User_Icon.setMaximumSize(QtCore.QSize(100, 16777215))
         self.User_Icon.setStyleSheet("border-radius:50px;\n"
-"background-color: rgb(45, 3, 59);")
+"background-color: rgb(45, 3, 59);\n"
+"image: url(:/icons/media/D-logo.png);")
+        self.User_Icon.setText("")
         self.User_Icon.setObjectName("User_Icon")
         self.horizontalLayout.addWidget(self.User_Icon)
         self.frame_3 = QtWidgets.QFrame(self.frame)
@@ -513,7 +515,7 @@ class Ui_InternshipWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.User_Icon.setText(_translate("MainWindow", "PushButton"))
+        # self.User_Icon.setText(_translate("MainWindow", "PushButton"))
         self.DEVHACK.setText(_translate("MainWindow", "DEVHACK"))
         # self.Hello__User_Name.setText(_translate("MainWindow", "HELLO AMBRISH"))
         self.Home_button.setText(_translate("MainWindow", "HOME"))
