@@ -3,6 +3,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QLabel
 from PyQt5.QtGui import QDesktopServices
 from PyQt5.QtCore import QUrl
+from PyQt5.QtGui import QImage, QPixmap
+import requests
 import mysql.connector as mc
 import sys
 import Homepage
@@ -282,9 +284,9 @@ class Ui_HackWindow(object):
         self.frame = {}
         mydb = mc.connect(host="localhost", user="root", password="root", database="devhack")
         mycursor = mydb.cursor()
-        mycursor.execute("SELECT count(hack_id) FROM hackathons_data1;")
+        mycursor.execute("SELECT count(hack_id) FROM hackathons_data2;")
         count = mycursor.fetchone()
-        for i in range(1,count[0]+1):                
+        for i in reversed(range(1,count[0]+1)): 
                 self.frame_8 = QtWidgets.QFrame(self.scrollAreaWidgetContents_2)
                 self.frame_8.setMinimumSize(QtCore.QSize(0, 250))
                 self.frame_8.setStyleSheet("background-color: rgb(255, 255, 255);\n"
@@ -305,13 +307,13 @@ class Ui_HackWindow(object):
                 font.setFamily("Leelawadee UI")
                 font.setPointSize(26)
                 font.setBold(True)
-                mycursor.execute("SELECT * FROM hackathons_data1 WHERE Hack_Id='%s'" %str(i))
+                mycursor.execute("SELECT * FROM hackathons_data2 WHERE Hack_Id='%s'" %str(i))
                 self.name_of_hack = mycursor.fetchone()
                 # self.name_of_hack = "".join(self.name_of_hack)
                 # print(self.name_of_hack)
                 # self.name_of_hack = "Global Hacks Hackathon: 2022 - 2023"
                 self.label.setFont(font)
-                self.label.setText(str(self.name_of_hack[1]))
+                self.label.setText(str(self.name_of_hack[1]))#Displaying Name of hackathon
                 self.label.setStyleSheet("color: rgb(45, 3, 59);")
                 self.label.setObjectName("label")
                 self.verticalLayout_6.addWidget(self.label)
@@ -321,7 +323,7 @@ class Ui_HackWindow(object):
                 font.setPointSize(16)
                 # mycursor.execute("SELECT Start_date FROM hackathons_data WHERE Hack_Id='%s'" %str(i))
                 self.label_3.setFont(font)
-                self.label_3.setText(self.name_of_hack[4])
+                self.label_3.setText(self.name_of_hack[2])#Displaying Timeline of hackathon
                 self.label_3.setStyleSheet("color: rgb(215, 89, 43);")
                 self.label_3.setObjectName("label_3")
                 self.verticalLayout_6.addWidget(self.label_3)
@@ -331,7 +333,7 @@ class Ui_HackWindow(object):
                 font.setPointSize(12)
                 self.label_4.setFont(font)
                 # self.name_of_hack[2] = ''.join(self.name_of_hack[2])
-                self.label_4.setText(self.name_of_hack[3])
+                # self.label_4.setText(self.name_of_hack[3]) 
                 self.label_4.setStyleSheet("color: rgb(142, 144, 161);")
                 self.label_4.setObjectName("label_4")
                 self.verticalLayout_6.addWidget(self.label_4)
@@ -341,7 +343,7 @@ class Ui_HackWindow(object):
                 font.setPointSize(16)
                 self.label_5.setFont(font)
                 self.label_5.linkActivated.connect(self.link)
-                self.label_5.setText('<a href="'+self.name_of_hack[5]+'">'+self.name_of_hack[5]+'</a>')
+                self.label_5.setText(self.name_of_hack[3])#Displaying description of hackathon
                 self.label_5.setStyleSheet("QLabel{\n"
 "color: rgb(45, 3, 59);\n"
 "text-align:center;\n"
@@ -358,7 +360,7 @@ class Ui_HackWindow(object):
                 font.setPointSize(16)
                 font.setBold(True)
                 self.pushButton_8.setFont(font)
-                self.pushButton_8.setText('<center><a href="'+self.name_of_hack[2]+'"style ="color:white"> Apply</a></center>')
+                self.pushButton_8.setText('<center><a href="'+self.name_of_hack[5]+'"style ="color:white"> Apply</a></center>')
                 self.pushButton_8.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
                 self.pushButton_8.setStyleSheet("background-color: rgb(45, 3, 59);\n"
                 "color: rgb(255, 255, 255);")
@@ -366,14 +368,16 @@ class Ui_HackWindow(object):
                 self.pushButton_8.setObjectName("pushButton_8")
                 self.verticalLayout_6.addWidget(self.pushButton_8)
                 self.horizontalLayout_3.addWidget(self.frame_12)
-                self.pushButton = QtWidgets.QPushButton(self.frame_8)
-                self.pushButton.setMinimumSize(QtCore.QSize(0, 170))
-                # x=img()
-                self.pushButton.setStyleSheet("image: url('%s')"%self.name_of_hack[6])
-                self.pushButton.setText("")
-                self.pushButton.setObjectName("pushButton")
-                self.horizontalLayout_3.addWidget(self.pushButton)
-                self.verticalLayout_5.addWidget(self.frame_8, 0, QtCore.Qt.AlignTop)
+                self.Image_label = QtWidgets.QLabel(self.frame_8)
+                self.Image_label.setMinimumSize(QtCore.QSize(500, 0))
+                self.Image_label.setText("")
+                self.image = QImage()
+                self.image.loadFromData(requests.get(self.name_of_hack[4]).content)#Image_link
+                self.Image_label.setPixmap(QPixmap(self.image))
+                self.Image_label.show()
+                self.Image_label.setObjectName("Image_label")
+                self.horizontalLayout_3.addWidget(self.Image_label, 0, QtCore.Qt.AlignHCenter)
+                self.verticalLayout_5.addWidget(self.frame_8)
                 self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
                 self.horizontalLayout_2.addWidget(self.scrollArea_2)
                 
