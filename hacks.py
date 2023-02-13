@@ -52,7 +52,9 @@ class Ui_HackWindow(object):
         self.User_Icon.setMinimumSize(QtCore.QSize(0, 100))
         self.User_Icon.setMaximumSize(QtCore.QSize(100, 16777215))
         self.User_Icon.setStyleSheet("border-radius:50px;\n"
-"background-color: rgb(45, 3, 59);")
+"background-color: rgb(45, 3, 59);\n"
+"image: url(:/icons/media/D-logo.png);")
+        self.User_Icon.setText("")
         self.User_Icon.setObjectName("User_Icon")
         self.horizontalLayout.addWidget(self.User_Icon)
         self.frame_3 = QtWidgets.QFrame(self.frame)
@@ -79,6 +81,13 @@ class Ui_HackWindow(object):
         self.Hello__User_Name.setFont(font)
         self.Hello__User_Name.setStyleSheet("color: rgb(129, 12, 168);")
         self.Hello__User_Name.setObjectName("Hello__User_Name")
+        mydb = mc.connect(host="localhost", user="root", password="root", database="devhack")
+        mycursor = mydb.cursor()
+        mycursor.execute("SELECT name FROM user_reg_data WHERE email='{0}' and password='{1}'".format(self.email,self.password))
+        self.user_name = (mycursor.fetchone())
+        self.user_name = ''.join(self.user_name)     
+        # print(self.user_name)  
+        self.Hello__User_Name.setText("Hello " + self.user_name)
         self.verticalLayout_4.addWidget(self.Hello__User_Name, 0, QtCore.Qt.AlignTop)
         self.horizontalLayout.addWidget(self.frame_3)
         spacerItem = QtWidgets.QSpacerItem(107, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
@@ -502,7 +511,7 @@ class Ui_HackWindow(object):
     def retranslateUi(self, Mmainwindow):
         _translate = QtCore.QCoreApplication.translate
         Mmainwindow.setWindowTitle(_translate("Mmainwindow", "Mmainwindow"))
-        self.User_Icon.setText(_translate("Mmainwindow", "PushButton"))
+        # self.User_Icon.setText(_translate("Mmainwindow", "PushButton"))
         self.DEVHACK.setText(_translate("Mmainwindow", "DEVHACK"))
         # self.Hello__User_Name.setText(_translate("Mmainwindow", "HELLO AMBRISH"))
         self.Home_button.setText(_translate("Mmainwindow", "HOME"))
