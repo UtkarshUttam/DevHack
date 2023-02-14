@@ -14,3 +14,9 @@ To run the application, just Run Starting_page.py
     * *remember not to directly change to the targeted py file as the targeted py file may already contains some other codes which are important for the program. Copy your changes from the newly created py file to the targeted py file or just compare both and then replace carefully so that the program won't break.
 3. Convert the resources file to the a py file:
     * pyrcc5 media.qrc -o media.py
+
+
+## Snapshots of the project:
+
+### Starting Window:
+! [Starting_Window](:/media/Snaps/Starting_page.png)
