@@ -19,4 +19,4 @@ To run the application, just Run Starting_page.py
 ## Snapshots of the project:
 
 ### Starting Window:
-![Starting_Window](:/media/Snaps/Starting_page.png)
+![Starting_Window](/media/Snaps/Starting_page.png)
