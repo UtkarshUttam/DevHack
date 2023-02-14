@@ -271,4 +271,5 @@ if __name__ == "__main__":
     ui = Ui_AboutWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
+    MainWindow.setWindowTitle("About Page")
     sys.exit(app.exec_())

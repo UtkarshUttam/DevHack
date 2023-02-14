@@ -376,4 +376,5 @@ if __name__ == "__main__":
     ui = Ui_SignupWindow()
     ui.setupUi(SignupWindow)
     SignupWindow.show()
+    SignupWindow.setWindowTitle("Signup Page")
     sys.exit(app.exec_())

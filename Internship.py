@@ -549,4 +549,5 @@ if __name__ == "__main__":
     ui = Ui_InternshipWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
+    MainWindow.setWindowTitle("Internship Page")
     sys.exit(app.exec_())

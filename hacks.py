@@ -556,5 +556,6 @@ def dumb():
                 ui = Ui_HackWindow()
                 ui.setupUi(Mmainwindow)
                 Mmainwindow.show()
+                Mmainwindow.setWindowTitle("Hackathons Page")
                 sys.exit(app.exec_())
 dumb()

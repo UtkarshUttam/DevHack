@@ -231,4 +231,5 @@ if __name__ == "__main__":
     ui = Ui_StartWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
+    MainWindow.setWindowTitle("Starting Page")
     sys.exit(app.exec_())

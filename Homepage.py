@@ -1202,4 +1202,5 @@ if __name__ == "__main__":
     ui = Ui_HomeWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
+    MainWindow.setWindowTitle("Home Page")
     sys.exit(app.exec_())

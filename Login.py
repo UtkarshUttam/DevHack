@@ -243,4 +243,5 @@ if __name__ == "__main__":
     ui = Ui_LoginWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
+    MainWindow.setWindowTitle("Login Page")
     sys.exit(app.exec_())
