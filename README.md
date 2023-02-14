@@ -15,7 +15,7 @@ To run the application, just Run Starting_page.py
 3. Convert the resources file to the a py file:
     * pyrcc5 media.qrc -o media.py
 
-
+***
 ## Snapshots of the project:
 
 ### Starting Window:
