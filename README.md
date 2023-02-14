@@ -1,5 +1,6 @@
 # DevHack
-
+***
+## Running the application:
 type: pip install -r requirements.txt before running
 
 To run the application, just Run Starting_page.py
